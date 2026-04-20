@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /consultation
+Disallow: /thank-you
+
+Sitemap: https://movetochinanow.com/sitemap-index.xml

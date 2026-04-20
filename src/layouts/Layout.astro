@@ -1,15 +1,30 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
 
 interface Props {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
+  canonical?: string;
+  robots?: string;
+  ogType?: string;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
 const {
-  title = 'Move to China Now',
-  description = 'Your guide to moving to China.',
+  title,
+  description,
+  canonical,
+  robots,
+  ogType = 'website',
+  ogTitle = title,
+  ogDescription = description,
 } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/' || pathname === '';
+const isConsultation = pathname.startsWith('/consultation');
+const canonicalUrl = canonical ?? new URL(pathname, 'https://movetochinanow.com').toString();
 ---
 
 <!doctype html>
@@ -17,11 +32,144 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Seres Immigration" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23c0392b'/><text y='.9em' x='50' text-anchor='middle' font-size='70' fill='white'>S</text></svg>" />
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KEJMX89R6L"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KEJMX89R6L');
+    </script>
+
+    <slot name="head" />
   </head>
-  <body class="bg-white text-gray-900 antialiased">
+  <body>
+    <div class="topbar">
+      <div class="container">
+        <strong>Free 30-Minute Consultation</strong> — Find out if you qualify for a China green card. <a href="/consultation">Book now &rarr;</a>
+      </div>
+    </div>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="/" class="nav-logo">
+            <div class="nav-logo-mark" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001 1h4a1 1 0 001-1v-5a1 1 0 00-1-1h-4a1 1 0 00-1 1v5z"/></svg>
+            </div>
+            <div>
+              <div class="nav-logo-text">Seres Immigration</div>
+              <div class="nav-logo-sub">Live More for Less</div>
+            </div>
+          </a>
+          <ul class="nav-links">
+            <li><a href={isHome ? '#who-qualifies' : '/#who-qualifies'}>Eligibility</a></li>
+            <li><a href={isHome ? '#benefits' : '/#benefits'}>Benefits</a></li>
+            <li><a href={isHome ? '#how-to-apply' : '/#how-to-apply'}>How to Apply</a></li>
+            <li><a href={isHome ? '#documents' : '/#documents'}>Documents</a></li>
+            <li><a href={isHome ? '#timeline' : '/#timeline'}>Timeline &amp; Costs</a></li>
+            <li><a href={isHome ? '#faq' : '/#faq'}>FAQ</a></li>
+          </ul>
+          <div class="nav-cta">
+            {isConsultation ? (
+              <a href="/" class="btn btn-primary" style="padding:10px 20px; font-size:.85rem;">Back to Guide</a>
+            ) : (
+              <a href="/consultation" class="btn btn-primary" style="padding:10px 20px; font-size:.85rem;">Free Consultation</a>
+            )}
+            <button class="nav-mobile-btn" aria-label="Toggle menu" aria-expanded="false" data-nav-toggle>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <slot />
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="/" class="footer-logo">
+              <div class="footer-logo-mark" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001 1h4a1 1 0 001-1v-5a1 1 0 00-1-1h-4a1 1 0 00-1 1v5z"/></svg>
+              </div>
+              <span class="footer-logo-text">Seres Immigration</span>
+            </a>
+            <p class="footer-desc">The only immigration consultancy focused exclusively on helping Westerners relocate to China. Based in Shenzhen and Hong Kong.</p>
+            <p style="color: rgba(255,255,255,.5); font-size: .85rem;">
+              <a href="mailto:info@seresimmigration.com" style="color: rgba(255,255,255,.75);">info@seresimmigration.com</a>
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>Guide</h5>
+            <ul>
+              <li><a href="/#what-is">What Is It</a></li>
+              <li><a href="/#who-qualifies">Eligibility</a></li>
+              <li><a href="/#benefits">Benefits</a></li>
+              <li><a href="/#vs-visa">vs. Work Visa</a></li>
+              <li><a href="/#how-to-apply">How to Apply</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <ul>
+              <li><a href="/#documents">Documents</a></li>
+              <li><a href="/#timeline">Timeline &amp; Costs</a></li>
+              <li><a href="/#limitations">Limitations</a></li>
+              <li><a href="/#decision">Should You Apply?</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/">Seres Immigration</a></li>
+              <li><a href="/consultation">Free Consultation</a></li>
+              <li><a href="mailto:info@seresimmigration.com">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Seres Immigration. All rights reserved.</span>
+          <div style="display:flex; gap:16px;">
+            <a href="/consultation">Book Consultation</a>
+            <a href="mailto:info@seresimmigration.com">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navEl = document.querySelector<HTMLElement>('.nav');
+      const toggleBtn = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+      toggleBtn?.addEventListener('click', () => {
+        const open = navEl?.hasAttribute('data-nav-open');
+        if (open) {
+          navEl?.removeAttribute('data-nav-open');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          navEl?.setAttribute('data-nav-open', '');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    </script>
   </body>
 </html>

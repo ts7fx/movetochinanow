@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local marketing assets (not part of the website build)
+/flyer.html
+/flyer.png
+/qr.png
+/screenshot.js
