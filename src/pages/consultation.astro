@@ -311,8 +311,11 @@ import Layout from '../layouts/Layout.astro';
   .form-intro h2 { margin-bottom: 8px; font-size: clamp(1.5rem, 3vw, 2rem); }
   .form-intro p { color: var(--color-text-light); font-size: .95rem; }
 
-  .form-section { padding-top: 28px; margin-top: 28px; border-top: 1px solid var(--color-border); }
-  .form-section:first-of-type { padding-top: 0; margin-top: 0; border-top: none; }
+  .form-section + .form-section {
+    padding-top: 28px;
+    margin-top: 28px;
+    border-top: 1px solid var(--color-border);
+  }
   .form-section-title {
     display: flex; align-items: baseline; gap: 10px; margin-bottom: 20px;
   }
