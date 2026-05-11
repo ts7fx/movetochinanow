@@ -1,6 +1,11 @@
 ---
 import '../styles/global.css';
 
+interface NavLink {
+  label: string;
+  href: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -9,6 +14,7 @@ interface Props {
   ogType?: string;
   ogTitle?: string;
   ogDescription?: string;
+  navLinks?: NavLink[];
 }
 
 const {
@@ -19,12 +25,24 @@ const {
   ogType = 'website',
   ogTitle = title,
   ogDescription = description,
+  navLinks,
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const isHome = pathname === '/' || pathname === '';
 const isConsultation = pathname.startsWith('/consultation');
 const canonicalUrl = canonical ?? new URL(pathname, 'https://movetochinanow.com').toString();
+
+const defaultHomeLinks: NavLink[] = [
+  { label: 'Eligibility', href: '#who-qualifies' },
+  { label: 'Benefits', href: '#benefits' },
+  { label: 'How to Apply', href: '#how-to-apply' },
+  { label: 'Documents', href: '#documents' },
+  { label: 'Timeline & Costs', href: '#timeline' },
+  { label: 'FAQ', href: '#faq' },
+];
+
+const resolvedNavLinks: NavLink[] | null = navLinks ?? (isHome ? defaultHomeLinks : null);
 ---
 
 <!doctype html>
@@ -79,14 +97,11 @@ const canonicalUrl = canonical ?? new URL(pathname, 'https://movetochinanow.com'
               <div class="nav-logo-sub">Live More for Less</div>
             </div>
           </a>
-          {isHome && (
+          {resolvedNavLinks && (
             <ul class="nav-links">
-              <li><a href="#who-qualifies">Eligibility</a></li>
-              <li><a href="#benefits">Benefits</a></li>
-              <li><a href="#how-to-apply">How to Apply</a></li>
-              <li><a href="#documents">Documents</a></li>
-              <li><a href="#timeline">Timeline &amp; Costs</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              {resolvedNavLinks.map((link) => (
+                <li><a href={link.href}>{link.label}</a></li>
+              ))}
             </ul>
           )}
           <div class="nav-cta">

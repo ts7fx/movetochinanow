@@ -120,6 +120,15 @@ const schemaGraph = {
   description="The plain-English guide to China's temporary residence permits (Z/X/S/Q/M/R/D visas), the Permanent Residence Card, the 30-day application window, 24h/72h registration rules, overstay penalties, and how TR ladders into PR."
   canonical="https://movetochinanow.com/china-residence-permit-guide"
   ogType="article"
+  navLinks={[
+    { label: 'TR vs PR', href: '#sec-tr-vs-pr' },
+    { label: 'Visa Categories', href: '#sec-visa-cats' },
+    { label: 'Timeline', href: '#sec-timeline' },
+    { label: 'Registration', href: '#sec-registration' },
+    { label: 'Overstay', href: '#sec-overstay' },
+    { label: 'Path to PR', href: '#sec-path-to-pr' },
+    { label: 'FAQ', href: '#sec-faq' },
+  ]}
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schemaGraph)}></script>
 
@@ -811,12 +820,12 @@ const schemaGraph = {
   <style>
     /* design tokens — aligned with homepage global.css */
     .rp-guide {
-      --rp-clr-bg:        #FFFFFF;
+      --rp-clr-bg:        #F7F6F2;
       --rp-clr-surface:   #FFFFFF;
       --rp-clr-primary:   #c0392b;
       --rp-clr-primary-d: #96281B;
       --rp-clr-ink:       #1A1A1A;
-      --rp-clr-heading:   #0f1f3d;
+      --rp-clr-heading:   #1A1A1A;
       --rp-clr-ink-mid:   #3d3d3f;
       --rp-clr-ink-muted: #6b6b70;
       --rp-clr-border:    #d8d4cc;
@@ -843,17 +852,16 @@ const schemaGraph = {
       display: block;
     }
 
-    /* typography — match homepage: serif headings in navy */
+    /* typography — match homepage scale */
     .rp-guide :where(h1, h2, h3, h4) {
       font-family: Georgia, 'Times New Roman', serif;
       line-height: 1.25;
-      font-weight: 700;
       color: var(--rp-clr-heading);
     }
-    .rp-guide h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); }
-    .rp-guide h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 16px; }
-    .rp-guide h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); margin-bottom: 0.6rem; margin-top: 1.5rem; }
-    .rp-guide h4 { font-size: 1.02rem; margin-bottom: 0.4rem; }
+    .rp-guide h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; }
+    .rp-guide h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 700; margin-bottom: 16px; }
+    .rp-guide h3 { font-size: clamp(1.2rem, 2.5vw, 1.55rem); font-weight: 600; margin-bottom: 0.7rem; margin-top: 1.6rem; }
+    .rp-guide h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
     .rp-guide p { margin-bottom: 1.1rem; color: var(--rp-clr-ink-mid); }
     .rp-guide a { color: var(--rp-clr-primary); text-decoration: none; }
     .rp-guide a:hover { text-decoration: underline; }
@@ -864,9 +872,9 @@ const schemaGraph = {
     /* container */
     .rp-container { max-width: var(--rp-max-w); margin: 0 auto; padding: 0 20px; }
 
-    /* hero — match homepage navy hero */
+    /* hero — dark + cream body */
     .rp-hero {
-      background: #0f1f3d;
+      background: #1A1A1A;
       color: #fff;
       padding: 80px 24px 72px;
       position: relative;
@@ -1137,9 +1145,9 @@ const schemaGraph = {
     .rp-faq__item[open] summary { margin-bottom: 10px; }
     .rp-faq__item p { margin-bottom: 0; font-size: 0.92rem; }
 
-    /* CTA block — match homepage navy */
+    /* CTA block — dark to match hero */
     .rp-cta-block {
-      background: #0f1f3d; border-radius: var(--rp-radius-lg);
+      background: #1A1A1A; border-radius: var(--rp-radius-lg);
       padding: 48px 36px; text-align: center; margin: 52px 0 0;
     }
     .rp-cta-block h2 { color: #fff; margin-bottom: 10px; }
