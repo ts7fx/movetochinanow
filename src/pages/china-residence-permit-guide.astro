@@ -852,22 +852,25 @@ const schemaGraph = {
       display: block;
     }
 
-    /* typography — match homepage scale */
-    .rp-guide :where(h1, h2, h3, h4) {
+    /* typography — match homepage scale.
+       Use :where(.rp-guide) so this article-wide reset has zero wrapper
+       specificity, allowing component styles like .hero h1, .hero-sub,
+       and .btn-primary to win inside the hero and CTA blocks. */
+    :where(.rp-guide) :where(h1, h2, h3, h4) {
       font-family: Georgia, 'Times New Roman', serif;
       line-height: 1.25;
       color: var(--rp-clr-heading);
     }
-    .rp-guide h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; }
-    .rp-guide h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 700; margin-bottom: 16px; }
-    .rp-guide h3 { font-size: clamp(1.2rem, 2.5vw, 1.55rem); font-weight: 600; margin-bottom: 0.7rem; margin-top: 1.6rem; }
-    .rp-guide h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .rp-guide p { margin-bottom: 1.1rem; color: var(--rp-clr-ink-mid); }
-    .rp-guide a { color: var(--rp-clr-primary); text-decoration: none; }
-    .rp-guide a:hover { text-decoration: underline; }
-    .rp-guide strong { color: var(--rp-clr-ink); }
-    .rp-guide ul, .rp-guide ol { margin: 0 0 1.1rem 1.4rem; color: var(--rp-clr-ink-mid); }
-    .rp-guide li { margin-bottom: 0.45rem; }
+    :where(.rp-guide) h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; }
+    :where(.rp-guide) h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 700; margin-bottom: 16px; }
+    :where(.rp-guide) h3 { font-size: clamp(1.2rem, 2.5vw, 1.55rem); font-weight: 600; margin-bottom: 0.7rem; margin-top: 1.6rem; }
+    :where(.rp-guide) h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    :where(.rp-guide) p { margin-bottom: 1.1rem; color: var(--rp-clr-ink-mid); }
+    :where(.rp-guide) a { color: var(--rp-clr-primary); text-decoration: none; }
+    :where(.rp-guide) a:hover { text-decoration: underline; }
+    :where(.rp-guide) strong { color: var(--rp-clr-ink); }
+    :where(.rp-guide) ul, :where(.rp-guide) ol { margin: 0 0 1.1rem 1.4rem; color: var(--rp-clr-ink-mid); }
+    :where(.rp-guide) li { margin-bottom: 0.45rem; }
 
     /* TOC */
     .rp-toc-wrap {
