@@ -1,0 +1,15 @@
+{
+  "name": "movetochinanow-gsc",
+  "version": "0.1.0",
+  "description": "Google Search Console monitoring & SEO diagnostics for movetochinanow.com",
+  "type": "module",
+  "scripts": {
+    "auth": "node scripts/auth.js",
+    "audit": "node scripts/audit.js",
+    "research": "node scripts/research.js",
+    "snapshot": "node scripts/snapshot.js"
+  },
+  "dependencies": {
+    "googleapis": "^171.4.0"
+  }
+}
