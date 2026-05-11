@@ -79,14 +79,16 @@ const canonicalUrl = canonical ?? new URL(pathname, 'https://movetochinanow.com'
               <div class="nav-logo-sub">Live More for Less</div>
             </div>
           </a>
-          <ul class="nav-links">
-            <li><a href={isHome ? '#who-qualifies' : '/#who-qualifies'}>Eligibility</a></li>
-            <li><a href={isHome ? '#benefits' : '/#benefits'}>Benefits</a></li>
-            <li><a href={isHome ? '#how-to-apply' : '/#how-to-apply'}>How to Apply</a></li>
-            <li><a href={isHome ? '#documents' : '/#documents'}>Documents</a></li>
-            <li><a href={isHome ? '#timeline' : '/#timeline'}>Timeline &amp; Costs</a></li>
-            <li><a href={isHome ? '#faq' : '/#faq'}>FAQ</a></li>
-          </ul>
+          {isHome && (
+            <ul class="nav-links">
+              <li><a href="#who-qualifies">Eligibility</a></li>
+              <li><a href="#benefits">Benefits</a></li>
+              <li><a href="#how-to-apply">How to Apply</a></li>
+              <li><a href="#documents">Documents</a></li>
+              <li><a href="#timeline">Timeline &amp; Costs</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          )}
           <div class="nav-cta">
             {isConsultation ? (
               <a href="/" class="btn btn-primary" style="padding:10px 20px; font-size:.85rem;">Back to Guide</a>

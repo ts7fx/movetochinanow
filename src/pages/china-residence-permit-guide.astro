@@ -128,31 +128,35 @@ const schemaGraph = {
     <!-- ══ HERO ══ -->
     <header class="rp-hero">
       <div class="rp-hero__inner">
-        <div class="rp-hero__eyebrow">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <div class="rp-hero__badge">
+          <span class="rp-hero__badge-dot" aria-hidden="true"></span>
           Updated May 2026
         </div>
         <h1>China Residence Permit Requirements for Foreigners 2026</h1>
         <p class="rp-hero__sub">
           The plain-English guide to temporary residence permits, permanent residency, registration deadlines, and what happens if you overstay — written for people actually planning to move to China.
         </p>
-        <div class="rp-hero__meta">
-          <span class="rp-hero__meta-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            18 min read
-          </span>
-          <span class="rp-hero__meta-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            Written for Western expats and retirees
-          </span>
-          <span class="rp-hero__meta-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            Seres Immigration · Shenzhen, Shanghai, Fuzhou &amp; California
-          </span>
-        </div>
         <div class="rp-hero__ctas">
           <a href="/consultation" class="rp-btn-primary">Book a Free Consultation</a>
           <a href="#toc" class="rp-btn-ghost">Read the Guide</a>
+        </div>
+        <div class="rp-hero__stats">
+          <div class="rp-hero__stat">
+            <span class="rp-hero__stat-num">30</span>
+            <span class="rp-hero__stat-label">Days to Apply</span>
+          </div>
+          <div class="rp-hero__stat">
+            <span class="rp-hero__stat-num">24h</span>
+            <span class="rp-hero__stat-label">Urban Registration</span>
+          </div>
+          <div class="rp-hero__stat">
+            <span class="rp-hero__stat-num">10 yr</span>
+            <span class="rp-hero__stat-label">PR Card Validity</span>
+          </div>
+          <div class="rp-hero__stat">
+            <span class="rp-hero__stat-num">4 yr</span>
+            <span class="rp-hero__stat-label">To Qualify for PR</span>
+          </div>
         </div>
 
         <p class="rp-byline">
@@ -178,32 +182,6 @@ const schemaGraph = {
         </div>
       </div>
     </header>
-
-    <!-- Stat strip -->
-    <div class="rp-hero-stats" role="region" aria-label="Key statistics">
-      <div class="rp-hero-stats__inner">
-        <div class="rp-hero-stat">
-          <div class="rp-hero-stat__num">30</div>
-          <div class="rp-hero-stat__label">Days to apply for residence permit after arrival</div>
-        </div>
-        <div class="rp-hero-stat">
-          <div class="rp-hero-stat__num">24h</div>
-          <div class="rp-hero-stat__label">Registration deadline in urban areas</div>
-        </div>
-        <div class="rp-hero-stat">
-          <div class="rp-hero-stat__num">10yr</div>
-          <div class="rp-hero-stat__label">PR card validity</div>
-        </div>
-        <div class="rp-hero-stat">
-          <div class="rp-hero-stat__num">4yr</div>
-          <div class="rp-hero-stat__label">Continuous work residence to qualify for PR</div>
-        </div>
-        <div class="rp-hero-stat">
-          <div class="rp-hero-stat__num">¥10k</div>
-          <div class="rp-hero-stat__label">Max fine for 30+ day overstay</div>
-        </div>
-      </div>
-    </div>
 
     <!-- ══ ARTICLE BODY ══ -->
     <div class="rp-article-body">
@@ -831,16 +809,17 @@ const schemaGraph = {
   </article>
 
   <style>
-    /* design tokens scoped to the article */
+    /* design tokens — aligned with homepage global.css */
     .rp-guide {
-      --rp-clr-bg:        #F7F6F2;
+      --rp-clr-bg:        #FFFFFF;
       --rp-clr-surface:   #FFFFFF;
-      --rp-clr-primary:   #C0392B;
+      --rp-clr-primary:   #c0392b;
       --rp-clr-primary-d: #96281B;
       --rp-clr-ink:       #1A1A1A;
-      --rp-clr-ink-mid:   #444444;
-      --rp-clr-ink-muted: #6B6B6B;
-      --rp-clr-border:    #E0DDD6;
+      --rp-clr-heading:   #0f1f3d;
+      --rp-clr-ink-mid:   #3d3d3f;
+      --rp-clr-ink-muted: #6b6b70;
+      --rp-clr-border:    #d8d4cc;
       --rp-clr-accent:    #F0A500;
       --rp-clr-tag-bg:    #FEF3E2;
       --rp-clr-tag-txt:   #B07C00;
@@ -848,27 +827,33 @@ const schemaGraph = {
       --rp-clr-warn-brd:  #F0A500;
       --rp-clr-ok-bg:     #EAF5EA;
       --rp-clr-ok-brd:    #3A9B3A;
-      --rp-clr-row-alt:   #F7F6F2;
-      --rp-radius:        6px;
-      --rp-radius-lg:     12px;
-      --rp-shadow:        0 2px 12px rgba(0,0,0,0.07);
+      --rp-clr-row-alt:   #f8f6f1;
+      --rp-clr-cream:     #f8f6f1;
+      --rp-radius:        8px;
+      --rp-radius-lg:     16px;
+      --rp-shadow:        0 4px 16px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.06);
       --rp-max-w:         780px;
-      --rp-max-w-wide:    1080px;
+      --rp-max-w-wide:    1120px;
 
       background: var(--rp-clr-bg);
       color: var(--rp-clr-ink);
       line-height: 1.7;
       font-size: 17px;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       display: block;
     }
 
-    /* typography */
-    .rp-guide :where(h1, h2, h3, h4) { line-height: 1.25; font-weight: 700; color: var(--rp-clr-ink); }
+    /* typography — match homepage: serif headings in navy */
+    .rp-guide :where(h1, h2, h3, h4) {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--rp-clr-heading);
+    }
     .rp-guide h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); }
-    .rp-guide h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); margin-bottom: 1rem; }
-    .rp-guide h3 { font-size: clamp(1.05rem, 2vw, 1.3rem); margin-bottom: 0.6rem; margin-top: 1.5rem; }
-    .rp-guide h4 { font-size: 1rem; margin-bottom: 0.4rem; }
+    .rp-guide h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 16px; }
+    .rp-guide h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); margin-bottom: 0.6rem; margin-top: 1.5rem; }
+    .rp-guide h4 { font-size: 1.02rem; margin-bottom: 0.4rem; }
     .rp-guide p { margin-bottom: 1.1rem; color: var(--rp-clr-ink-mid); }
     .rp-guide a { color: var(--rp-clr-primary); text-decoration: none; }
     .rp-guide a:hover { text-decoration: underline; }
@@ -879,11 +864,11 @@ const schemaGraph = {
     /* container */
     .rp-container { max-width: var(--rp-max-w); margin: 0 auto; padding: 0 20px; }
 
-    /* hero */
+    /* hero — match homepage navy hero */
     .rp-hero {
-      background: #1A1A1A;
+      background: #0f1f3d;
       color: #fff;
-      padding: 60px 20px 52px;
+      padding: 80px 24px 72px;
       position: relative;
       overflow: hidden;
     }
@@ -894,33 +879,34 @@ const schemaGraph = {
       background: repeating-linear-gradient(-45deg, rgba(192,57,43,0.06) 0, rgba(192,57,43,0.06) 1px, transparent 1px, transparent 28px);
       pointer-events: none;
     }
-    .rp-hero__inner { position: relative; max-width: var(--rp-max-w); margin: 0 auto; }
-    .rp-hero__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(192,57,43,0.18);
-      border: 1px solid rgba(192,57,43,0.4);
-      color: #F5A89A;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 30px;
-      margin-bottom: 20px;
+    .rp-hero__inner { position: relative; max-width: var(--rp-max-w-wide); margin: 0 auto; }
+    .rp-hero__badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(192,57,43,.22); border: 1px solid rgba(192,57,43,.4);
+      border-radius: 100px; color: #f5b7b1; font-size: .8rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase; padding: 5px 14px; margin-bottom: 22px;
     }
-    .rp-hero h1 { color: #fff; margin-bottom: 18px; max-width: 680px; }
-    .rp-hero__sub { font-size: 1.08rem; color: #C8C4BC; margin-bottom: 30px; max-width: 600px; }
-    .rp-hero__meta {
-      display: flex; flex-wrap: wrap; gap: 18px;
-      margin-bottom: 34px; font-size: 0.83rem; color: #9E9994;
+    .rp-hero__badge-dot { width: 7px; height: 7px; background: #e74c3c; border-radius: 50%; }
+    .rp-hero h1 { color: #fff; margin-bottom: 18px; max-width: 760px; }
+    .rp-hero__sub { font-size: 1.15rem; color: rgba(255,255,255,.75); max-width: 640px; margin-bottom: 32px; line-height: 1.65; }
+    .rp-hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 52px; }
+    .rp-hero__stats {
+      display: flex; flex-wrap: wrap; gap: 32px;
+      padding-top: 40px; border-top: 1px solid rgba(255,255,255,.12);
     }
-    .rp-hero__meta-item { display: flex; align-items: center; gap: 6px; }
-    .rp-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    .rp-hero__stat { display: block; }
+    .rp-hero__stat-num {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2rem; font-weight: 700; color: #fff;
+      display: block; line-height: 1; margin-bottom: 5px;
+    }
+    .rp-hero__stat-label {
+      font-size: .82rem; color: rgba(255,255,255,.6);
+      text-transform: uppercase; letter-spacing: .06em; font-weight: 500;
+    }
 
     .rp-byline {
-      margin-top: 32px;
+      margin-top: 36px;
       font-size: .85rem;
       color: rgba(255,255,255,.55);
       max-width: 760px;
@@ -953,14 +939,6 @@ const schemaGraph = {
       text-decoration: none;
     }
     .rp-guide .rp-btn-ghost:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.06); text-decoration: none; color: #fff; }
-
-    /* hero stat strip */
-    .rp-hero-stats { background: var(--rp-clr-primary); }
-    .rp-hero-stats__inner { max-width: var(--rp-max-w-wide); margin: 0 auto; display: flex; flex-wrap: wrap; }
-    .rp-hero-stat { flex: 1 1 160px; padding: 20px 24px; border-right: 1px solid rgba(255,255,255,0.18); text-align: center; }
-    .rp-hero-stat:last-child { border-right: none; }
-    .rp-hero-stat__num { font-size: 1.7rem; font-weight: 800; color: #fff; line-height: 1.1; }
-    .rp-hero-stat__label { font-size: 0.76rem; color: rgba(255,255,255,0.75); margin-top: 3px; }
 
     /* TOC */
     .rp-toc-wrap {
@@ -1159,10 +1137,10 @@ const schemaGraph = {
     .rp-faq__item[open] summary { margin-bottom: 10px; }
     .rp-faq__item p { margin-bottom: 0; font-size: 0.92rem; }
 
-    /* CTA block */
+    /* CTA block — match homepage navy */
     .rp-cta-block {
-      background: var(--rp-clr-ink); border-radius: var(--rp-radius-lg);
-      padding: 40px 36px; text-align: center; margin: 52px 0 0;
+      background: #0f1f3d; border-radius: var(--rp-radius-lg);
+      padding: 48px 36px; text-align: center; margin: 52px 0 0;
     }
     .rp-cta-block h2 { color: #fff; margin-bottom: 10px; }
     .rp-cta-block p { color: #C8C4BC; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
