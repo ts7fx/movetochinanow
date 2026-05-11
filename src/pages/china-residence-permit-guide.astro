@@ -1067,6 +1067,19 @@ const schemaGraph = {
     }
     .rp-cta-block h2 { color: #fff; margin-bottom: 10px; }
     .rp-cta-block p { color: #C8C4BC; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    /* Restore hero/CTA text colors. Astro's CSS scoping appends
+       [data-astro-cid-*] to .rp-guide selectors, which boosts their
+       specificity above plain .hero h1 / .hero-sub / .btn-primary in
+       global.css. Re-assert the dark-bg colors here, where the page's
+       own scoping works in our favor. */
+    .rp-guide .hero h1 { color: #fff; }
+    .rp-guide .hero .hero-sub { color: rgba(255, 255, 255, 0.75); }
+    .rp-guide .hero .btn-primary,
+    .rp-guide .rp-cta-block .btn-primary { color: #fff; }
+    .rp-guide .hero .btn-primary:hover,
+    .rp-guide .rp-cta-block .btn-primary:hover { color: #fff; }
+    .rp-guide .hero .btn-outline { color: #fff; }
     .rp-cta-trust {
       display: flex; flex-wrap: wrap; justify-content: center;
       gap: 20px; margin-top: 22px;
