@@ -15,6 +15,8 @@ interface Props {
   ogTitle?: string;
   ogDescription?: string;
   navLinks?: NavLink[];
+  footerSections?: NavLink[];
+  footerSectionsTitle?: string;
 }
 
 const {
@@ -26,6 +28,8 @@ const {
   ogTitle = title,
   ogDescription = description,
   navLinks,
+  footerSections,
+  footerSectionsTitle,
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
@@ -43,6 +47,24 @@ const defaultHomeLinks: NavLink[] = [
 ];
 
 const resolvedNavLinks: NavLink[] | null = navLinks ?? (isHome ? defaultHomeLinks : null);
+
+// Site-level guide directory — every content page registered here so the
+// footer can render cross-links automatically.
+interface SitePage {
+  title: string;
+  href: string;
+  shortLabel?: string;
+}
+const sitePages: SitePage[] = [
+  { title: 'China Green Card Guide', href: '/', shortLabel: 'Green Card Guide' },
+  { title: 'China Residence Permit Guide', href: '/china-residence-permit-guide/', shortLabel: 'Residence Permit Guide' },
+  { title: 'Free Consultation', href: '/consultation/' },
+];
+const normalizedPath = pathname.endsWith('/') ? pathname : pathname + '/';
+const otherPages = sitePages.filter((p) => p.href !== normalizedPath && p.href !== pathname);
+
+const resolvedFooterSections = footerSections ?? resolvedNavLinks ?? defaultHomeLinks;
+const footerSectionsHeading = footerSectionsTitle ?? (resolvedNavLinks ? 'On This Page' : 'Guide');
 ---
 
 <!doctype html>
@@ -130,31 +152,29 @@ const resolvedNavLinks: NavLink[] | null = navLinks ?? (isHome ? defaultHomeLink
               </div>
               <span class="footer-logo-text">Seres Immigration</span>
             </a>
-            <p class="footer-desc">The only immigration consultancy focused exclusively on helping Westerners relocate to China. Based in Shenzhen and Hong Kong.</p>
+            <p class="footer-desc">The only immigration consultancy focused exclusively on helping Westerners relocate to China. Based in Shenzhen, Shanghai, Fuzhou &amp; California.</p>
             <p style="color: rgba(255,255,255,.5); font-size: .85rem;">
               <a href="mailto:info@seresimmigration.com" style="color: rgba(255,255,255,.75);">info@seresimmigration.com</a>
             </p>
           </div>
           <div class="footer-col">
-            <h5>Guide</h5>
+            <h5>{footerSectionsHeading}</h5>
             <ul>
-              <li><a href="/#what-is">What Is It</a></li>
-              <li><a href="/#who-qualifies">Eligibility</a></li>
-              <li><a href="/#benefits">Benefits</a></li>
-              <li><a href="/#vs-visa">vs. Work Visa</a></li>
-              <li><a href="/#how-to-apply">How to Apply</a></li>
+              {resolvedFooterSections.map((link) => (
+                <li><a href={link.href}>{link.label}</a></li>
+              ))}
             </ul>
           </div>
-          <div class="footer-col">
-            <h5>Resources</h5>
-            <ul>
-              <li><a href="/#documents">Documents</a></li>
-              <li><a href="/#timeline">Timeline &amp; Costs</a></li>
-              <li><a href="/#limitations">Limitations</a></li>
-              <li><a href="/#decision">Should You Apply?</a></li>
-              <li><a href="/#faq">FAQ</a></li>
-            </ul>
-          </div>
+          {otherPages.length > 0 && (
+            <div class="footer-col">
+              <h5>Other Guides</h5>
+              <ul>
+                {otherPages.map((page) => (
+                  <li><a href={page.href}>{page.shortLabel ?? page.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div class="footer-col">
             <h5>Company</h5>
             <ul>
