@@ -1,8 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const faqSchema = {
-  "@context": "https://schema.org",
+const PUBLISHED = "2026-03-05";
+const MODIFIED = "2026-05-11";
+
+const orgNode = {
+  "@type": "Organization",
+  "@id": "https://seresimmigration.com/#organization",
+  "name": "Seres Immigration",
+  "alternateName": "Seres Consulting Limited",
+  "url": "https://seresimmigration.com/",
+  "sameAs": ["https://movetochinanow.com/"],
+  "email": "info@seresimmigration.com",
+  "slogan": "Live More for Less",
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Wenhong \"Stephen\" YOU",
+      "jobTitle": "Co-Founder & CEO",
+      "description": "J.D., University of Virginia School of Law. Former U.S. Navy Judge Advocate (2011 Naval Legal Service Command Attorney of the Year) and former Senior Corporate Attorney at DLA Piper Shanghai."
+    },
+    {
+      "@type": "Person",
+      "name": "Tianye \"Will\" SONG",
+      "jobTitle": "Co-Founder",
+      "description": "M.S. Data Science, University of Virginia. Over a decade in cross-border product and operations bridging U.S. and China teams."
+    },
+    {
+      "@type": "Person",
+      "name": "Cihan \"Barry\" CHEN",
+      "jobTitle": "Co-Founder",
+      "description": "M.Sc. Computer Science, University of Oxford. Former software development engineer at Amazon Web Services."
+    }
+  ],
+  "address": [
+    { "@type": "PostalAddress", "addressLocality": "Shenzhen", "addressCountry": "CN" },
+    { "@type": "PostalAddress", "addressLocality": "Shanghai", "addressCountry": "CN" },
+    { "@type": "PostalAddress", "addressLocality": "Fuzhou", "addressCountry": "CN" },
+    { "@type": "PostalAddress", "addressRegion": "California", "addressCountry": "US" }
+  ]
+};
+
+const articleNode = {
+  "@type": "Article",
+  "@id": "https://movetochinanow.com/#article",
+  "headline": "China Green Card 2026: How Foreigners Qualify for Permanent Residence",
+  "description": "Find out if you qualify for China's permanent residence in 2026 — all eligibility routes, documents, costs, and timelines. From Seres Immigration's advisory team.",
+  "datePublished": PUBLISHED,
+  "dateModified": MODIFIED,
+  "author": { "@id": "https://seresimmigration.com/#organization" },
+  "publisher": { "@id": "https://seresimmigration.com/#organization" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://movetochinanow.com/" },
+  "inLanguage": "en",
+  "about": "China Permanent Residence Permit (Foreign Permanent Resident ID Card)"
+};
+
+const faqNode = {
   "@type": "FAQPage",
   "mainEntity": [
     {
@@ -55,15 +108,20 @@ const faqSchema = {
     }
   ]
 };
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [orgNode, articleNode, faqNode]
+};
 ---
 
 <Layout
-  title="China Green Card 2026: Requirements, Application & Costs | Seres"
-  description="Complete 2026 guide to China's permanent residence (Five-Star Card): eligibility pathways, step-by-step application, required documents, timelines, and costs."
+  title="China Green Card 2026: Permanent Residence Requirements for Foreigners | Seres"
+  description="Find out if you qualify for China's permanent residence in 2026 — all eligibility routes, documents, costs, and timelines. From Seres Immigration's advisory team."
   canonical="https://movetochinanow.com/"
   ogType="article"
 >
-  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)}></script>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schemaGraph)}></script>
 
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-heading">
@@ -72,7 +130,7 @@ const faqSchema = {
         <span class="hero-badge-dot" aria-hidden="true"></span>
         Updated for 2026
       </div>
-      <h1 id="hero-heading" class="text-balance">The Complete Guide to Getting a China Green Card</h1>
+      <h1 id="hero-heading" class="text-balance">China Green Card 2026: How Foreigners Qualify for Permanent Residence</h1>
       <p class="hero-sub">Everything you need to know about China's permanent residence permit — eligibility pathways, step-by-step application process, required documents, realistic timelines, and costs. Written by the only immigration consultancy focused 100% on Western expats relocating to China.</p>
       <div class="hero-actions">
         <a href="/consultation" class="btn btn-primary btn-lg">Book Free Consultation</a>
@@ -96,6 +154,9 @@ const faqSchema = {
           <span class="hero-stat-label">Processing Time</span>
         </div>
       </div>
+      <p class="hero-byline" style="margin-top:32px; font-size:.85rem; opacity:.55; text-align:center; max-width:760px; margin-left:auto; margin-right:auto;">
+        By Seres Immigration&rsquo;s advisory team &mdash; US-trained attorneys and cross-border specialists based in Shenzhen, Shanghai, Fuzhou &amp; California &middot; Updated May 11, 2026
+      </p>
     </div>
   </section>
 
