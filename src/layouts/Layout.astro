@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { BUILD_COMMIT, BUILD_BRANCH, BUILD_TIME } from '../lib/build-info';
 
 interface NavLink {
   label: string;
@@ -88,6 +89,10 @@ const footerSectionsHeading = footerSectionsTitle ?? (resolvedNavLinks ? 'On Thi
     <meta name="twitter:description" content={ogDescription} />
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23c0392b'/><text y='.9em' x='50' text-anchor='middle' font-size='70' fill='white'>S</text></svg>" />
+
+    <meta name="build-commit" content={BUILD_COMMIT} />
+    <meta name="build-branch" content={BUILD_BRANCH} />
+    <meta name="build-time" content={BUILD_TIME} />
 
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KEJMX89R6L"></script>
