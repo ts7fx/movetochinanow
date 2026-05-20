@@ -18,6 +18,12 @@ interface Props {
   navLinks?: NavLink[];
   footerSections?: NavLink[];
   footerSectionsTitle?: string;
+  /**
+   * Top-bar tagline (the line under "Free 30-Minute Consultation").
+   * Per-page override; defaults to the green-card line. Should end with
+   * a "Book now →" anchor — the link to /consultation is added by Layout.
+   */
+  topbarTagline?: string;
 }
 
 const {
@@ -31,6 +37,7 @@ const {
   navLinks,
   footerSections,
   footerSectionsTitle,
+  topbarTagline = 'Find out if you qualify for a China green card.',
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
@@ -109,7 +116,7 @@ const footerSectionsHeading = footerSectionsTitle ?? (resolvedNavLinks ? 'On Thi
   <body>
     <div class="topbar">
       <div class="container">
-        <strong>Free 30-Minute Consultation</strong> — Find out if you qualify for a China green card. <a href="/consultation">Book now &rarr;</a>
+        <strong>Free 30-Minute Consultation</strong> — {topbarTagline} <a href="/consultation">Book now &rarr;</a>
       </div>
     </div>
 
