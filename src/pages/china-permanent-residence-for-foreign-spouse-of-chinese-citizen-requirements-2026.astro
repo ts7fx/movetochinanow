@@ -1,0 +1,1049 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://seresimmigration.com/#organization",
+      "name": "Seres Immigration",
+      "alternateName": "Seres Consulting Limited",
+      "url": "https://seresimmigration.com/",
+      "sameAs": [
+        "https://movetochinanow.com/"
+      ],
+      "email": "info@seresimmigration.com",
+      "slogan": "Live More for Less",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Wenhong \"Stephen\" YOU",
+          "jobTitle": "Co-Founder & CEO",
+          "description": "J.D., University of Virginia School of Law. Former U.S. Navy Judge Advocate (2011 Naval Legal Service Command Attorney of the Year) and former Senior Corporate Attorney at DLA Piper Shanghai."
+        },
+        {
+          "@type": "Person",
+          "name": "Tianye \"Will\" SONG",
+          "jobTitle": "Co-Founder",
+          "description": "M.S. Data Science, University of Virginia. Over a decade in cross-border product and operations bridging U.S. and China teams."
+        },
+        {
+          "@type": "Person",
+          "name": "Cihan \"Barry\" CHEN",
+          "jobTitle": "Co-Founder",
+          "description": "M.Sc. Computer Science, University of Oxford. Former software development engineer at Amazon Web Services."
+        }
+      ],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Shenzhen",
+          "addressCountry": "CN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Shanghai",
+          "addressCountry": "CN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Fuzhou",
+          "addressCountry": "CN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressRegion": "California",
+          "addressCountry": "US"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://movetochinanow.com/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/#article",
+      "headline": "China Permanent Residence for Foreign Spouses of Chinese Citizens (2026)",
+      "description": "Married to a Chinese citizen? Qualify for permanent residence in 2026 with 5+ years marriage, 5 years continuous residence (9+ months/year), and 200,000 RMB bank balance. Full requirements, documents, timeline.",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "author": {
+        "@id": "https://seresimmigration.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://seresimmigration.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://movetochinanow.com/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does the spouse-route PR application take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "9\u201312 months end-to-end in 2026 \u2014 the longest of any PR route in China. The local Public Security Bureau investigation alone can take 3 months, with another 2 months at the inspection authority."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does PR through marriage lead to Chinese citizenship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Permanent residence and citizenship are entirely separate statuses. China does not allow dual citizenship; naturalization requires renouncing your original passport. Most spouses choose to remain on PR indefinitely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my PR if I divorce after approval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once granted, the PR card is yours and is not automatically revoked on divorce. However, ongoing renewals require continued residence and good conduct \u2014 divorce alone is not a revocation trigger, but immigration fraud investigations sometimes are."
+          }
+        }
+      ]
+    }
+  ]
+};
+
+const body = `<section id="eligibility-glance" aria-labelledby="h2-elig-glance">
+        <h2 id="h2-elig-glance">Eligibility at a Glance</h2>
+        <p>China&apos;s spouse-route permanent residence sits under <strong>Ministry of Public Security and Ministry of Foreign Affairs Order No. 74 (August 2004)</strong> (the main PR regulation). To qualify, you need to tick four boxes simultaneously: long marriage, consecutive physical presence, financial stability, and properly executed paperwork. Miss any one of them and the PSB will return your application.</p>
+
+        <div class="eligibility-grid" role="list" aria-label="Key eligibility requirements">
+          <div class="elig-card" role="listitem">
+            <div class="elig-card-label">Marriage Duration</div>
+            <div class="elig-card-value">5+ years</div>
+            <div class="elig-card-note">to a Chinese citizen with valid registered marriage</div>
+          </div>
+          <div class="elig-card" role="listitem">
+            <div class="elig-card-label">China Residence</div>
+            <div class="elig-card-value">5 years</div>
+            <div class="elig-card-note">consecutive, at 9+ months inside China per year</div>
+          </div>
+          <div class="elig-card" role="listitem">
+            <div class="elig-card-label">Bank Balance</div>
+            <div class="elig-card-value">&yen;200,000+</div>
+            <div class="elig-card-note">in Chinese bank account (varies by city)</div>
+          </div>
+          <div class="elig-card" role="listitem">
+            <div class="elig-card-label">Processing Time</div>
+            <div class="elig-card-value">9–12 mo</div>
+            <div class="elig-card-note">longest of any PR route in 2026</div>
+          </div>
+          <div class="elig-card" role="listitem">
+            <div class="elig-card-label">Card Validity</div>
+            <div class="elig-card-value">10 years</div>
+            <div class="elig-card-note">renewable; not citizenship</div>
+          </div>
+        </div>
+
+        <div class="callout callout-warning" role="alert">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="callout-body">
+            <div class="callout-title">This is NOT citizenship by marriage</div>
+            <p class="text-sm">A lot of people conflate these two. Permanent residence gives you the right to live and work in China long-term — it does not make you a Chinese citizen. China does not recognise dual citizenship, and marriage to a Chinese national does not grant citizenship automatically or otherwise. The “Chinese Green Card” is a permanent residence card, full stop.</p>
+          </div>
+        </div>
+
+        <p>For the broader context on how PR works in China, check the <a href="/" class="inline-link">main guide to China permanent residence</a>. If you&apos;re still on a temporary residence permit and wondering how it maps to PR eligibility, the <a href="/china-residence-permit-guide/" class="inline-link">residence permit guide</a> covers the TR vs. PR distinction clearly.</p>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 2 — Who Qualifies
+      ═══════════════════════════════════════════════════════ -->
+      <section id="who-qualifies" aria-labelledby="h2-who-qualifies">
+        <h2 id="h2-who-qualifies">Who Qualifies for the Spouse Route</h2>
+        <p>The short version: any foreign national in a <em>legally registered</em> marriage to a Chinese citizen, who has actually lived in China for a meaningful stretch of time. Let&apos;s break down each piece.</p>
+
+        <h3>The marriage must be legally registered</h3>
+        <p>A religious ceremony, a foreign marriage, or a long-term relationship doesn&apos;t count unless the marriage is <strong>registered in China&apos;s civil registry system</strong> (or you have a foreign marriage certificate that has been properly apostilled and notarised — more on that in the documents section). A Chinese court order confirming a common-law marriage in China does not exist; you need the paper.</p>
+
+        <h3>Five consecutive years in China</h3>
+        <p>This is the one that catches people off guard. The five-year clock doesn&apos;t start from the date of marriage — it runs from when you begin living in China on a valid visa or residence permit. The <strong>“9+ months per year” rule</strong> means you can leave China, but you can&apos;t be out for more than approximately 90 days in a calendar year. A single year where you spent five months abroad resets the clock for that year&apos;s qualifying period, even if you&apos;ve been here for four years otherwise.</p>
+
+        <div class="callout callout-info">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="callout-body">
+            <div class="callout-title">Track your exit/entry dates carefully</div>
+            <p class="text-sm">Your passport entry/exit stamps are your primary proof of time in China. If you&apos;re planning to apply, keep a running spreadsheet of every border crossing. PSB officers will cross-reference against immigration records, and any discrepancies between your claimed residence period and actual records can flag the application for extra scrutiny.</p>
+          </div>
+        </div>
+
+        <h3>Financial requirements</h3>
+        <p>The <strong>200,000 RMB bank balance requirement</strong> applies nationally as a baseline, but some cities set higher thresholds. Shanghai, Beijing, and Shenzhen have informally applied stricter standards. The funds must be in a Chinese bank account — offshore accounts held at international banks don&apos;t satisfy this requirement. The PSB typically wants to see the balance held consistently over a period rather than deposited the week before the application.</p>
+
+        <h3>No serious criminal record</h3>
+        <p>You&apos;ll need a clean criminal record from both your home country and from China. Any conviction involving drugs, fraud, or violence is likely disqualifying. Minor traffic offences generally aren&apos;t an issue, but anything more serious warrants a conversation with a qualified immigration consultant before you invest 9–12 months waiting for a result.</p>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 3 — Spouse Route vs Other PR Pathways
+      ═══════════════════════════════════════════════════════ -->
+      <section id="vs-other-routes" aria-labelledby="h2-vs-routes">
+        <h2 id="h2-vs-routes">How the Spouse Route Differs from Other PR Pathways</h2>
+        <p>China has several categories of permanent residence under Order No. 74. The spouse route is the most accessible for ordinary expats, but it&apos;s also <span class="badge badge-amber">slowest</span> and most documentation-heavy. Here&apos;s a quick comparison:</p>
+
+        <div class="table-wrap" role="region" aria-label="PR pathway comparison table">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>PR Pathway</th>
+                <th>Key Requirement</th>
+                <th>Processing</th>
+                <th>Difficulty</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td>Spouse of Chinese citizen</td>
+                <td>5 yr marriage + 5 yr residence + 200k RMB</td>
+                <td>9–12 months</td>
+                <td>Medium — paperwork heavy</td>
+              </tr>
+              <tr>
+                <td>High-end talent (Category A)</td>
+                <td>Government-recognised talent award or senior role at state entity</td>
+                <td>3–6 months</td>
+                <td>Hard — narrow eligibility</td>
+              </tr>
+              <tr>
+                <td>Investment (Category B/C)</td>
+                <td>Significant investment + job creation in China</td>
+                <td>6–12 months</td>
+                <td>Hard — capital intensive</td>
+              </tr>
+              <tr>
+                <td>Long-term residence contribution</td>
+                <td>15+ years lawful residence + significant contribution</td>
+                <td>6–12 months</td>
+                <td>Hard — discretionary approval</td>
+              </tr>
+              <tr>
+                <td>Parent of Chinese citizen</td>
+                <td>Dependent parent aged 60+ with Chinese citizen child in China</td>
+                <td>6–9 months</td>
+                <td>Medium</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The spouse route stands out because the criteria are objective and rule-based — there&apos;s no discretionary “significant contribution” standard. If you meet the numbers, you&apos;re in principle eligible. The challenge is the documentation gauntlet and the cohabitation scrutiny, not vague judgement calls. That&apos;s why this route is where most long-term expat partners should be looking first.</p>
+</section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 4 — Required Documents
+      ═══════════════════════════════════════════════════════ -->
+      <section id="documents" aria-labelledby="h2-documents">
+        <h2 id="h2-documents">Required Documents</h2>
+        <p>This is the part that bites applicants most often. China&apos;s permanent residence application requires a precise stack of documents — missing one, having an expired certification, or using the wrong notarisation route can stall your application for months. Get this right upfront.</p>
+
+        <h3>Core document checklist</h3>
+        <ul class="doc-list" role="list" aria-label="Required documents checklist">
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>PR Application Form (Exit-Entry Form 3)</strong>
+              <span>Completed in Chinese; must be signed by applicant and Chinese spouse</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Foreign Marriage Certificate — Apostilled &amp; Notarised</strong>
+              <span>Must be apostilled in the country of issue; Chinese notarisation required; valid within 6 months of application date</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Chinese Spouse&apos;s Hukou (Household Registration)</strong>
+              <span>Original household register and a recent extract; must show current valid registration</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Bank Statement — 200,000 RMB Minimum</strong>
+              <span>Issued by a Chinese bank; typically a 3–6 month statement showing consistent balance; must be stamped by the bank</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Proof of Residence — 5-Year Continuous Stay</strong>
+              <span>Residence registration records (&#23621;&#30767;&#35760;&#24405;); entry/exit record from the PSB; rental contracts or property deed</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Cohabitation Evidence</strong>
+              <span>Shared utility bills, joint lease, school enrolment records for children — the more, the better</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Criminal Record Check (Home Country)</strong>
+              <span>From your country&apos;s official police authority; apostilled; dated within 6 months</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Health Certificate</strong>
+              <span>Physical exam at a designated Chinese quarantine hospital; must include HIV, TB, and STD screening</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Passport (valid 12+ months beyond application)</strong>
+              <span>Full photocopy of all pages; biometric photo to PSB specs (white background, no glasses)</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Current Residence Permit</strong>
+              <span>Your existing China residence permit; must be valid throughout the application period</span>
+            </div>
+          </li>
+          <li class="doc-item" role="listitem">
+            <div class="doc-item-check" aria-hidden="true"></div>
+            <div class="doc-item-text">
+              <strong>Photos of the Marriage &amp; Life Together</strong>
+              <span>Informal but expected: a selection of dated photos showing the couple living together in China over the qualifying period</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="callout callout-danger">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="callout-body">
+            <div class="callout-title">The 6-month apostille deadline is hard</div>
+            <p class="text-sm">Your foreign marriage certificate must be apostilled (in the country of issue) and then notarised in China, and both certifications must be dated within <strong>six months of your application submission date</strong>. If you get the apostille done and then wait eight months to submit, you&apos;ll need to restart that process. Don&apos;t get the apostille until you&apos;re genuinely ready to apply.</p>
+          </div>
+        </div>
+
+        <h3>A note on notarisation vs. apostille</h3>
+        <p>These are two separate processes that are often confused. An <strong>apostille</strong> is a stamp issued by a competent authority in your home country (usually a government agency or court) verifying that a document is genuine. It&apos;s required for documents issued in countries that are party to the Hague Apostille Convention (most Western countries qualify). Once apostilled, the document must then go through <strong>notarisation in China</strong>, which verifies the translation and the certification. Both steps are mandatory — the PSB will not accept a document that has only one of them.</p>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 5 — Step-by-Step Process
+      ═══════════════════════════════════════════════════════ -->
+      <section id="process" aria-labelledby="h2-process">
+        <h2 id="h2-process">Step-by-Step Application Process</h2>
+        <p>The spouse-route PR application runs through your local <strong>Public Security Bureau (PSB) Exit-Entry Administration</strong>. There is no national online portal — everything is handled in person at the city-level PSB. Here&apos;s how the process looks from start to finish:</p>
+
+        <ol class="process-steps" aria-label="Application process steps">
+          <li class="process-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-body">
+              <h3>Gather and certify all documents</h3>
+              <p>Start with the documents that take the longest: the apostille on your foreign marriage certificate (can take 6–12 weeks depending on your home country), the criminal background check, and the health certificate. Get everything together before you begin the notarisation process in China.</p>
+              <span class="step-tag">Estimated time: 2–4 months</span>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-body">
+              <h3>Chinese notarisation of foreign documents</h3>
+              <p>Take your apostilled documents to a Chinese notary public. They will certify the Chinese translations and authenticate the foreign certifications. This can take 2–4 weeks. Keep the original notarised copies safe — the PSB takes them.</p>
+              <span class="step-tag">Estimated time: 2–4 weeks</span>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-body">
+              <h3>Pre-application check at the local PSB</h3>
+              <p>Most PSBs in major cities allow (or informally require) a preliminary document review before you formally submit. Use this. Bring a full copy of your packet and ask the officer to confirm it&apos;s complete. This informal check can save you a rejection and months of delay.</p>
+              <span class="step-tag">Recommended, not always required</span>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-num" aria-hidden="true">4</div>
+            <div class="step-body">
+              <h3>Formal submission at the PSB Exit-Entry Administration</h3>
+              <p>Submit your complete packet in person. Both you and your Chinese spouse will typically need to be present. You&apos;ll receive a receipt; this is your proof of submission and your reference number. Keep this document.</p>
+              <span class="step-tag">Both spouses must attend</span>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-num" aria-hidden="true">5</div>
+            <div class="step-body">
+              <h3>PSB review and potential interview</h3>
+              <p>During the review period, the PSB may request additional documents, call you in for an interview, or conduct a home visit to verify cohabitation. Interviews tend to focus on the authenticity of the marriage: how you met, your daily life, knowledge of each other&apos;s family, etc. Prepare for this. It is not an interrogation, but it is an assessment.</p>
+              <span class="step-tag">Estimated time: 3–6 months review period</span>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-num" aria-hidden="true">6</div>
+            <div class="step-body">
+              <h3>Provincial-level approval</h3>
+              <p>Spouse-route applications must be approved at the provincial level before the final card is issued. Your application moves from the city PSB to the provincial PSB. This is where the bulk of the 9–12 month timeline comes from — provincial review can take 4–6 months on its own.</p>
+              <span class="step-tag">Estimated time: 4–6 months</span>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-num" aria-hidden="true">7</div>
+            <div class="step-body">
+              <h3>Card issuance</h3>
+              <p>Once provincial approval comes through, the local PSB will notify you to collect your permanent residence card. You&apos;ll complete biometric registration and receive your card. The card is valid for 10 years and is renewable.</p>
+              <span class="step-tag">Final step</span>
+            </div>
+          </li>
+        </ol>
+
+        <div class="callout callout-info">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="callout-body">
+            <div class="callout-title">Keep your existing residence permit valid the entire time</div>
+            <p class="text-sm">During the 9–12 month review period, you must maintain a valid residence permit. Do not let your current permit expire while your PR application is pending — if it lapses, you&apos;re technically overstaying, which can invalidate your application and create separate immigration issues. Check the <a href="/china-residence-permit-guide/">residence permit guide</a> for renewal procedures.</p>
+          </div>
+        </div>
+</section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 6 — Common Rejection Causes
+      ═══════════════════════════════════════════════════════ -->
+      <section id="rejections" aria-labelledby="h2-rejections">
+        <h2 id="h2-rejections">Common Rejection Causes</h2>
+        <p>The spouse PR route has a meaningful rejection rate — and unlike a visa denial, a rejected PR application means 9–12 months wasted. These are the reasons applications get returned or refused, in rough order of frequency:</p>
+
+        <ul class="rejection-list" aria-label="Common rejection reasons">
+          <li class="rejection-item">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM5.354 5.646a.5.5 0 1 0-.708.708L7.293 9l-2.647 2.646a.5.5 0 0 0 .708.708L8 9.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 9l2.647-2.646a.5.5 0 0 0-.708-.708L8 8.293 5.354 5.646Z"/></svg>
+            <div>
+              <strong>Marriage authenticity doubts</strong>
+              <p class="text-sm text-muted">The PSB scrutinises whether the marriage is genuine or primarily for immigration purposes. Thin cohabitation evidence, inconsistent interview answers between spouses, or a large age gap without a credible backstory all raise flags. The standard is “genuine marital relationship” and officers are trained to probe for it.</p>
+            </div>
+          </li>
+          <li class="rejection-item">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM5.354 5.646a.5.5 0 1 0-.708.708L7.293 9l-2.647 2.646a.5.5 0 0 0 .708.708L8 9.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 9l2.647-2.646a.5.5 0 0 0-.708-.708L8 8.293 5.354 5.646Z"/></svg>
+            <div>
+              <strong>Insufficient cohabitation evidence</strong>
+              <p class="text-sm text-muted">Even a genuine marriage can fail on this point if the couple hasn&apos;t built a documentary record of living together. Separate registered addresses, no joint bills, no photos — these tell a story the PSB doesn&apos;t want to hear. Start building this record well before you apply.</p>
+            </div>
+          </li>
+          <li class="rejection-item">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM5.354 5.646a.5.5 0 1 0-.708.708L7.293 9l-2.647 2.646a.5.5 0 0 0 .708.708L8 9.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 9l2.647-2.646a.5.5 0 0 0-.708-.708L8 8.293 5.354 5.646Z"/></svg>
+            <div>
+              <strong>Improperly notarised or apostilled certificates</strong>
+              <p class="text-sm text-muted">Wrong notarisation type (notarised without prior apostille, or apostilled in the wrong country), expired certifications, or translations not stamped by a PSB-recognised notary. This is a purely procedural rejection and entirely avoidable with the right preparation.</p>
+            </div>
+          </li>
+          <li class="rejection-item">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM5.354 5.646a.5.5 0 1 0-.708.708L7.293 9l-2.647 2.646a.5.5 0 0 0 .708.708L8 9.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 9l2.647-2.646a.5.5 0 0 0-.708-.708L8 8.293 5.354 5.646Z"/></svg>
+            <div>
+              <strong>Residence continuity gaps</strong>
+              <p class="text-sm text-muted">A year where you spent more than three months outside China breaks that year&apos;s qualifying residency. If your entry/exit records show an extended absence, be prepared to explain it in detail — and understand that it may mean you need to restart the 5-year clock.</p>
+            </div>
+          </li>
+          <li class="rejection-item">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM5.354 5.646a.5.5 0 1 0-.708.708L7.293 9l-2.647 2.646a.5.5 0 0 0 .708.708L8 9.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 9l2.647-2.646a.5.5 0 0 0-.708-.708L8 8.293 5.354 5.646Z"/></svg>
+            <div>
+              <strong>Bank balance not sustained</strong>
+              <p class="text-sm text-muted">Depositing 200,000 RMB immediately before applying and immediately withdrawing it after is a red flag. Officers may request extended bank statements to confirm the balance reflects genuine financial stability, not a short-term deposit.</p>
+            </div>
+          </li>
+          <li class="rejection-item">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM5.354 5.646a.5.5 0 1 0-.708.708L7.293 9l-2.647 2.646a.5.5 0 0 0 .708.708L8 9.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 9l2.647-2.646a.5.5 0 0 0-.708-.708L8 8.293 5.354 5.646Z"/></svg>
+            <div>
+              <strong>Outstanding visa violations or overstays</strong>
+              <p class="text-sm text-muted">Any prior overstay, visa violation, or deportation on record in China will likely be disqualifying. The PSB has full access to your immigration history in China.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="callout callout-success">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="callout-body">
+            <div class="callout-title">Getting a professional review before submitting is worth it</div>
+            <p class="text-sm">Given the 9–12 month turnaround, a rejected application is expensive in time. Having an experienced immigration consultant review your document packet and your cohabitation evidence before you submit can identify gaps before they become rejection reasons. <a href="/consultation">Book a free 30-minute eligibility review with Seres Immigration</a> to get a read on where you stand.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 7 — After Approval
+      ═══════════════════════════════════════════════════════ -->
+      <section id="after-approval" aria-labelledby="h2-after">
+        <h2 id="h2-after">After Approval — Card Validity, Renewal, Children &amp; Dependents</h2>
+        <p>You got it. Now what? The permanent residence card changes your life in China in meaningful ways — but there are still things to know about what comes next.</p>
+
+        <div class="after-grid" role="list" aria-label="Post-approval information">
+          <div class="after-card" role="listitem">
+            <div class="after-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v13A1.5 1.5 0 0 0 3.5 18h13a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 16.5 2h-13ZM6 6a1 1 0 0 1 1-1h6a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h6a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h3a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Z"/></svg>
+            </div>
+            <h3>Card validity &amp; renewal</h3>
+            <p>Your PR card is valid for 10 years. You apply to renew it at the local PSB before it expires. Renewal is generally straightforward as long as you&apos;re still in a valid marriage and haven&apos;t accumulated any serious criminal record.</p>
+          </div>
+          <div class="after-card" role="listitem">
+            <div class="after-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z"/></svg>
+            </div>
+            <h3>What PR lets you do</h3>
+            <p>Work in any industry without a work permit, enter China multiple times without a visa, rent property, open bank accounts, access some social services, and generally function much like a resident — without citizenship rights like voting.</p>
+          </div>
+          <div class="after-card" role="listitem">
+            <div class="after-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M1 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H4a3 3 0 0 1-3-3V6Zm4 1.5a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm2 3a4 4 0 0 0-3.665 2.395.75.75 0 0 0 .416 1A8.98 8.98 0 0 0 7 14.5a8.98 8.98 0 0 0 3.249-.607.75.75 0 0 0 .416-.997A4.002 4.002 0 0 0 7 10.5Zm5-3.75a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg>
+            </div>
+            <h3>Divorce impact</h3>
+            <p>Your PR status is not automatically revoked if you divorce your Chinese spouse. However, the PSB may decline to renew it if the marriage that qualified you no longer exists. In practice, divorces during the validity period require notification to the PSB.</p>
+          </div>
+          <div class="after-card" role="listitem">
+            <div class="after-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM17.555 5.828a1 1 0 0 0-1.11 0l-3.444 2.292V6a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2.12l3.444 2.292A1 1 0 0 0 18 13V7a1 1 0 0 0-.445-.172Z"/></svg>
+            </div>
+            <h3>Children &amp; dependents</h3>
+            <p>Minor children of PR holders may be eligible for a dependent residence permit. Children born to a Chinese national and a foreign permanent resident have a complicated citizenship situation — they are typically registered as Chinese citizens under the hukou system, but the PR holder parent cannot pass on Chinese citizenship.</p>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="callout-body">
+            <div class="callout-title">PR is not citizenship — this matters for travel</div>
+            <p class="text-sm">You still travel on your original passport. You do not get a Chinese passport. For countries that don&apos;t require a visa for China (which is most countries as of 2025–26 under the mutual visa-waiver expansion), your PR card combined with your foreign passport is your travel document. For countries that do require a visa to enter China, your PR card effectively replaces the visa.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ─── Mid-Article CTA ────────────────────────────────── -->
+      <div class="cta-block" role="complementary" aria-label="Consultation offer">
+        <h2>Find out if your marriage qualifies</h2>
+        <p>Book a free 30-minute eligibility review with the Seres Immigration team. Get a straight answer on where you stand, what&apos;s missing, and what to do next.</p>
+        <a href="/consultation" class="btn-primary">Book a Free Eligibility Review &rarr;</a>
+        <p class="cta-sub">No obligation. Available in English, Mandarin, and Cantonese.</p>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 8 — FAQ
+      ═══════════════════════════════════════════════════════ -->
+      <section id="faq" aria-labelledby="h2-faq">
+        <h2 id="h2-faq">Frequently Asked Questions</h2>
+        <p class="text-muted text-sm" style="margin-bottom:1.5rem;">These are the questions we actually get asked most often — not the generic ones.</p>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a1">
+              How long does spouse PR processing actually take in 2026?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a1" role="region">
+              <p>Realistically, plan for 9–12 months from submission to card issuance. In some cities (notably Shanghai) it has historically run longer. The bottleneck is the provincial-level review, not the initial city PSB submission. There is no reliable way to expedite the process. Applications submitted in late 2025 are generally seeing results in mid-to-late 2026.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a2">
+              Does getting PR through marriage mean I become a Chinese citizen?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a2" role="region">
+              <p>No. Permanent residence and citizenship are completely separate. PR gives you the right to live and work in China indefinitely; it does not make you a Chinese national. China does not permit dual citizenship under any circumstances. You retain your existing citizenship and continue to travel on your original passport. There is no citizenship-by-marriage pathway in China.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
+              If I divorce after getting PR, do I lose my permanent residence?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a3" role="region">
+              <p>Not automatically. Once approved, your PR card is valid for its 10-year term regardless of marital status. However, if you divorce and later apply to renew your PR card, the PSB may not renew on the spouse basis. There is precedent for PR cards not being renewed after divorce, though some people successfully renew based on their long-term residence record under a different category. This is a grey area that should be discussed with an immigration consultant if it&apos;s relevant to your situation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a4">
+              My marriage was registered in a foreign country, not in China. Does that count?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a4" role="region">
+              <p>Yes, as long as you have the foreign marriage certificate properly apostilled and notarised (see the documents section). Many international couples marry in the foreign partner&apos;s home country. This is fully acceptable for the PR application. The key requirements are: the certificate must be apostilled in the country of issue, Chinese-notarised, and submitted within six months of certification. Some PSBs also prefer to see a Chinese marriage registration even if a foreign one exists — worth checking with your local PSB or a consultant.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a5">
+              What counts as &quot;proof of genuine marriage&quot; for the PSB?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a5" role="region">
+              <p>There&apos;s no official checklist, but in practice: shared residential address registration, joint rental contract or mortgage, utility bills in both names, a selection of dated photos of the couple over the qualifying period (travel, family events, day-to-day life), evidence of joint finances, children if applicable, and consistent interview answers from both spouses. The PSB is looking for evidence that the marriage is a functioning relationship, not a paper arrangement.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a6">
+              Can my children get PR or permanent status through me?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a6" role="region">
+              <p>Minor foreign-national children of a PR holder may apply for a residence permit as dependents, but they do not automatically receive PR. Children born in China to a Chinese-citizen parent are typically registered as Chinese citizens through the hukou system. If your child holds both Chinese and foreign nationality (due to birth in a country with jus soli citizenship), China does not recognise the foreign nationality while in China — they are treated as Chinese citizens under Chinese law.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a7">
+              What happens if I spend too long outside China during the qualifying period?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a7" role="region">
+              <p>Any year where you spend more than approximately 90 days outside China does not count toward the 5-year qualifying residence period. You don&apos;t necessarily have to restart the whole 5-year clock — you just can&apos;t count that particular year. But if it&apos;s two or three years out of five, you&apos;re back to square one in terms of the continuous residence requirement. Track your days carefully, and if you&apos;re approaching the three-month threshold in any given year, it&apos;s worth considering whether a longer trip is worth losing that year&apos;s qualifying status.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a8">
+              Is 200,000 RMB the same everywhere in China?
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 1v10M1 6h10"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a8" role="region">
+              <p>The 200,000 RMB figure is the national floor under Order No. 74, but individual municipalities can and do set higher thresholds. Shanghai and Beijing have historically applied higher informal requirements, with some consultants reporting that 400,000–500,000 RMB is the practical floor in tier-1 cities. The official published threshold is 200,000 RMB nationally, but local PSBs have discretion. Check with your local PSB or a consultant familiar with your specific city before treating 200,000 as the definitive target.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+`;---
+
+<Layout
+  title="China Permanent Residence for Spouse of Chinese Citizen 2026 | Seres"
+  description="Married to a Chinese citizen? Qualify for permanent residence in 2026 with 5+ years marriage, 5 years continuous residence (9+ months/year), and 200,000 RMB bank balance. Full requirements, documents, timeline."
+  canonical="https://movetochinanow.com/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/"
+  ogType="article"
+  navLinks={[
+    { label: 'Eligibility', href: '#eligibility-glance' },
+    { label: 'Qualify', href: '#who-qualifies' },
+    { label: 'Compare', href: '#vs-other-routes' },
+    { label: 'Documents', href: '#documents' },
+    { label: 'Process', href: '#process' },
+    { label: 'Rejections', href: '#rejections' },
+    { label: 'Approval', href: '#after-approval' },
+    { label: 'FAQ', href: '#faq' },
+  ]}
+  footerSections={[
+    { label: 'Eligibility at a Glance', href: '#eligibility-glance' },
+    { label: 'Who Qualifies for Spouse Route', href: '#who-qualifies' },
+    { label: 'How It Differs from Other Routes', href: '#vs-other-routes' },
+    { label: 'Required Documents', href: '#documents' },
+    { label: 'Step-by-Step Process', href: '#process' },
+    { label: 'Common Rejection Causes', href: '#rejections' },
+    { label: 'After Approval', href: '#after-approval' },
+    { label: 'FAQ', href: '#faq' },
+  ]}
+  topbarTagline="Get a straight answer on your spouse-route PR eligibility."
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schemaGraph)}></script>
+
+  <article class="page-china-permanent-residence-for-foreign-spouse-of-chinese-citi">
+
+    <section class="hero hero--dark">
+      <div class="container">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Updated May 2026
+        </div>
+        <h1 class="text-balance">China Permanent Residence for Foreign Spouses of Chinese Citizens (2026)</h1>
+        <p class="hero-sub">The complete 2026 guide to permanent residence in China through marriage to a Chinese citizen &mdash; eligibility criteria, required documents, the 9&ndash;12 month application process, common rejection causes, and what life looks like after approval. Written by Seres Immigration&rsquo;s cross-border advisory team.</p>
+        <div class="hero-actions">
+          <a href="/consultation" class="btn btn-primary btn-lg">Book Free Consultation</a>
+          <a href="#who-qualifies" class="btn btn-outline btn-lg">Check Your Eligibility</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num">5+</span>
+            <span class="hero-stat-label">Years Marriage</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">5</span>
+            <span class="hero-stat-label">Years China Residence</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">9–12</span>
+            <span class="hero-stat-label">Months Processing</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">10 yr</span>
+            <span class="hero-stat-label">Card Validity</span>
+          </div>
+        </div>
+        <p class="hero-byline" style="margin-top:32px; font-size:.85rem; opacity:.55; text-align:center; max-width:760px; margin-left:auto; margin-right:auto;">By Seres Immigration&rsquo;s advisory team &mdash; US-trained attorneys and cross-border specialists based in Shenzhen, Shanghai, Fuzhou &amp; California &middot; Updated May 2026</p>
+
+        <div class="spouse-toc-wrap" id="toc">
+          <p class="spouse-toc-wrap__label">In This Guide</p>
+          <ol class="spouse-toc-list">
+            <li><a href="#eligibility-glance"><span><span class="spouse-toc-num">01</span>Eligibility at a Glance</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li><a href="#who-qualifies"><span><span class="spouse-toc-num">02</span>Who Qualifies for the Spouse Route</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li><a href="#vs-other-routes"><span><span class="spouse-toc-num">03</span>How It Differs from Other PR Routes</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li><a href="#documents"><span><span class="spouse-toc-num">04</span>Required Documents</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li><a href="#process"><span><span class="spouse-toc-num">05</span>Step-by-Step Application Process</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li><a href="#rejections"><span><span class="spouse-toc-num">06</span>Common Rejection Causes</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li><a href="#after-approval"><span><span class="spouse-toc-num">07</span>After Approval: Validity, Renewal, Family</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li><a href="#faq"><span><span class="spouse-toc-num">08</span>Frequently Asked Questions</span><svg class="spouse-toc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container--narrow">
+        <Fragment set:html={body} />      </div>
+    </section>
+
+  </article>
+
+  <style is:global>
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi table { width: 100%; border-collapse: collapse; margin: 1.5em 0; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi th, .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi td { border: 1px solid #e5e5e5; padding: 0.6em 0.9em; text-align: left; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi th { background: #f5f5f5; font-weight: 600; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi details.faq-required { border: 1px solid #e5e5e5; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.5rem 0; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi details.faq-required summary { cursor: pointer; font-weight: 600; }
+    /* Wrapper-class typography re-assertion per movetochinanow CLAUDE.md Astro scoping gotcha */
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .hero h1 { color: #fff; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .hero .hero-sub { color: rgba(255,255,255,.75); }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .hero .btn-primary { color: #fff; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .hero .hero-byline { color: rgba(255,255,255,.6); }
+
+
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-wrap { margin-top: 40px; padding: 24px 28px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10); border-radius: 12px; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-wrap__label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,.55); margin: 0 0 14px; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-list { list-style: none; margin: 0; padding: 0; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-list li + li { border-top: 1px solid rgba(255,255,255,.08); }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-list a { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; color: rgba(255,255,255,.82); font-size: 0.95rem; text-decoration: none; transition: color 0.15s; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-list a:hover { color: #fff; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-num { font-weight: 700; color: rgba(255,255,255,.55); margin-right: 12px; font-size: 0.82rem; letter-spacing: 0.05em; }
+    .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-arrow { color: rgba(255,255,255,.4); flex-shrink: 0; margin-left: 8px; }
+    @media (max-width: 600px) {
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-wrap { padding: 18px 16px; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .spouse-toc-list a { font-size: 0.88rem; }
+    }
+    /* ─── CJGEO component styles (page-scoped) ─── */
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi *::before, .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi { --red:        #c0392b;
+          --red-dark:   #922b21;
+          --red-light:  #f9e8e6;
+          --amber:      #b7791f;
+          --amber-light:#fef3c7;
+          --neutral-50: #fafaf9;
+          --neutral-100:#f5f4f2;
+          --neutral-200:#e7e5e2;
+          --neutral-400:#9c9890;
+          --neutral-600:#5c5851;
+          --neutral-800:#2d2b27;
+          --neutral-900:#1a1916;
+          --white:      #ffffff;
+          --font-sans:  'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+          --max-w:      1160px;
+          --sidebar-w:  240px;
+          --content-max: 720px; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi { font-family: var(--font-sans);
+          background: var(--neutral-50);
+          color: var(--neutral-800);
+          line-height: 1.7;
+          -webkit-font-smoothing: antialiased; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .toc-list a:hover, .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .toc-list a.active { color: var(--red);
+          background: var(--red-light);
+          border-left-color: var(--red); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout { border-radius: 8px;
+          padding: 1rem 1.1rem;
+          margin: 1.5rem 0;
+          display: flex;
+          gap: 0.75rem;
+          align-items: flex-start; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-icon { flex-shrink: 0; margin-top: 2px; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-icon svg { width: 18px; height: 18px; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-body { flex: 1; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-body p:last-child { margin-bottom: 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-title { font-weight: 700; font-size: 0.88rem; margin-bottom: 0.3rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-info { background: #eff6ff; border-left: 3px solid #3b82f6; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-info .callout-title { color: #1d4ed8; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-info .callout-icon svg { color: #3b82f6; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-warning { background: var(--amber-light); border-left: 3px solid var(--amber); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-warning .callout-title { color: #92400e; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-warning .callout-icon svg { color: var(--amber); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-success { background: #f0fdf4; border-left: 3px solid #22c55e; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-success .callout-title { color: #15803d; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-success .callout-icon svg { color: #22c55e; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-danger { background: var(--red-light); border-left: 3px solid var(--red); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-danger .callout-title { color: var(--red-dark); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .callout-danger .callout-icon svg { color: var(--red); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .eligibility-grid { display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+          gap: 1rem;
+          margin: 1.5rem 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .elig-card { background: var(--white);
+          border: 1px solid var(--neutral-200);
+          border-top: 3px solid var(--red);
+          border-radius: 8px;
+          padding: 1rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .elig-card-label { font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--neutral-400);
+          font-weight: 700;
+          margin-bottom: 0.3rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .elig-card-value { font-size: 1.35rem;
+          font-weight: 800;
+          color: var(--red);
+          line-height: 1.2;
+          margin-bottom: 0.2rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .elig-card-note { font-size: 0.78rem;
+          color: var(--neutral-600);
+          line-height: 1.4; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .table-wrap { overflow-x: auto;
+          margin: 1.5rem 0;
+          border-radius: 8px;
+          border: 1px solid var(--neutral-200); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table { width: 100%;
+          border-collapse: collapse;
+          font-size: 0.88rem;
+          background: var(--white); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table th { background: var(--neutral-900);
+          color: var(--white);
+          text-align: left;
+          padding: 0.7rem 1rem;
+          font-size: 0.78rem;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          white-space: nowrap; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table th:first-child { border-radius: 8px 0 0 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table th:last-child { border-radius: 0 8px 0 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table td { padding: 0.65rem 1rem;
+          border-bottom: 1px solid var(--neutral-200);
+          vertical-align: top;
+          line-height: 1.5; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table tr:last-child td { border-bottom: none; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table tr:nth-child(even) td { background: var(--neutral-50); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table .highlight-row td { background: var(--red-light); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .compare-table .highlight-row td:first-child { font-weight: 700; color: var(--red-dark); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .doc-list { list-style: none;
+          padding: 0;
+          margin: 1rem 0 1.5rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 0.6rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .doc-item { display: flex;
+          align-items: flex-start;
+          gap: 0.6rem;
+          background: var(--white);
+          border: 1px solid var(--neutral-200);
+          border-radius: 7px;
+          padding: 0.7rem 0.85rem;
+          font-size: 0.88rem;
+          line-height: 1.4; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .doc-item-check { flex-shrink: 0;
+          width: 18px;
+          height: 18px;
+          border: 2px solid var(--neutral-300, #d4d0c8);
+          border-radius: 4px;
+          margin-top: 1px;
+          background: var(--white);
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .doc-item-text strong { display: block; color: var(--neutral-900); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .doc-item-text span { color: var(--neutral-600); font-size: 0.78rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .process-steps { list-style: none; padding: 0; margin: 1.5rem 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .process-step { display: flex;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          position: relative; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .process-step:not(:last-child)::after { content: '';
+          position: absolute;
+          left: 17px;
+          top: 36px;
+          width: 2px;
+          height: calc(100% - 8px);
+          background: var(--neutral-200); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .step-num { flex-shrink: 0;
+          width: 36px;
+          height: 36px;
+          background: var(--neutral-900);
+          color: var(--white);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.82rem;
+          font-weight: 700;
+          z-index: 1; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .step-body { padding-top: 0.4rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .step-body h3 { margin-bottom: 0.3rem; font-size: 1rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .step-body p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .step-tag { display: inline-block;
+          background: var(--amber-light);
+          color: #92400e;
+          font-size: 0.72rem;
+          font-weight: 700;
+          padding: 0.15rem 0.5rem;
+          border-radius: 4px;
+          margin-top: 0.25rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .rejection-list { list-style: none; padding: 0; margin: 1rem 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .rejection-item { display: flex;
+          gap: 0.75rem;
+          align-items: flex-start;
+          padding: 0.85rem;
+          background: var(--white);
+          border: 1px solid var(--neutral-200);
+          border-left: 3px solid var(--red);
+          border-radius: 0 7px 7px 0;
+          margin-bottom: 0.6rem;
+          font-size: 0.9rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .rejection-item svg { flex-shrink: 0; margin-top: 2px; color: var(--red); width: 16px; height: 16px; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .after-grid { display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1rem;
+          margin: 1.5rem 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .after-card { background: var(--white);
+          border: 1px solid var(--neutral-200);
+          border-radius: 8px;
+          padding: 1.1rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .after-card-icon { width: 36px;
+          height: 36px;
+          background: var(--neutral-100);
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 0.65rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .after-card-icon svg { width: 18px; height: 18px; color: var(--neutral-900); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .after-card h3 { font-size: 0.9rem; margin-bottom: 0.3rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .after-card p { font-size: 0.82rem; color: var(--neutral-600); margin-bottom: 0; line-height: 1.5; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-list { margin: 1rem 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-item { border-bottom: 1px solid var(--neutral-200); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-item:first-child { border-top: 1px solid var(--neutral-200); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-question { width: 100%;
+          background: none;
+          border: none;
+          text-align: left;
+          cursor: pointer;
+          padding: 1rem 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: var(--neutral-900);
+          font-family: var(--font-sans); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-question:hover { color: var(--red); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-icon { flex-shrink: 0;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: var(--neutral-100);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.15s, transform 0.2s; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-icon svg { width: 12px; height: 12px; color: var(--neutral-600); transition: transform 0.2s; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-item.open .faq-icon { background: var(--red-light); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-item.open .faq-icon svg { color: var(--red); transform: rotate(45deg); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-answer { display: none;
+          padding-bottom: 1rem;
+          font-size: 0.9rem;
+          color: var(--neutral-800);
+          line-height: 1.7; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-item.open .faq-answer { display: block; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .faq-answer p:last-child { margin-bottom: 0; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .visual-placeholder { background: var(--neutral-100);
+          border: 2px dashed var(--neutral-200);
+          border-radius: 10px;
+          padding: 2.5rem 1.5rem;
+          text-align: center;
+          margin: 1.5rem 0;
+          color: var(--neutral-400);
+          font-size: 0.82rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .visual-placeholder svg { width: 32px; height: 32px; margin-bottom: 0.5rem; display: block; margin-left: auto; margin-right: auto; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .visual-placeholder strong { display: block; font-weight: 600; color: var(--neutral-600); margin-bottom: 0.2rem; font-size: 0.9rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .badge { display: inline-block;
+          font-size: 0.7rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.07em;
+          padding: 0.15rem 0.5rem;
+          border-radius: 4px;
+          vertical-align: middle; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .badge-red { background: var(--red-light);   color: var(--red-dark); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .badge-amber { background: var(--amber-light);  color: #92400e; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .badge-neutral { background: var(--neutral-200);  color: var(--neutral-600); }
+    @media (max-width: 860px) {
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .toc-card.mobile-open { display: block; margin-bottom: 1.5rem; }
+    }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .text-sm { font-size: 0.88rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .text-xs { font-size: 0.78rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .text-muted { color: var(--neutral-600); }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .mt-1 { margin-top: 0.5rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .mt-2 { margin-top: 1rem; }
+      .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .inline-link { font-weight: 500; }
+  </style>
+
+  <script>
+    // FAQ accordion: CJGEO ships the markup + CSS for .faq-item.open
+    // but not the JS toggle. Wire .faq-question clicks → toggle .open class
+    // and aria-expanded on the parent .faq-item.
+    document.querySelectorAll('.faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (!item) return;
+        const isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  </script>
+</Layout>
