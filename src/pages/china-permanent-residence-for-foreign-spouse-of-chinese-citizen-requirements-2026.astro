@@ -1032,4 +1032,18 @@ const body = `<section id="eligibility-glance" aria-labelledby="h2-elig-glance">
       .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .mt-2 { margin-top: 1rem; }
       .page-china-permanent-residence-for-foreign-spouse-of-chinese-citi .inline-link { font-weight: 500; }
   </style>
+
+  <script>
+    // FAQ accordion: CJGEO ships the markup + CSS for .faq-item.open
+    // but not the JS toggle. Wire .faq-question clicks → toggle .open class
+    // and aria-expanded on the parent .faq-item.
+    document.querySelectorAll('.faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (!item) return;
+        const isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  </script>
 </Layout>
