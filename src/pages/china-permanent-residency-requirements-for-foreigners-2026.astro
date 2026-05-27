@@ -1,0 +1,1783 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://seresimmigration.com/#organization",
+      "name": "Seres Immigration",
+      "alternateName": "Seres Consulting Limited",
+      "url": "https://seresimmigration.com/",
+      "sameAs": [
+        "https://movetochinanow.com/"
+      ],
+      "email": "info@seresimmigration.com",
+      "slogan": "Live More for Less",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Wenhong \"Stephen\" YOU",
+          "jobTitle": "Co-Founder & CEO",
+          "description": "J.D., University of Virginia School of Law. Former U.S. Navy Judge Advocate (2011 Naval Legal Service Command Attorney of the Year) and former Senior Corporate Attorney at DLA Piper Shanghai."
+        },
+        {
+          "@type": "Person",
+          "name": "Tianye \"Will\" SONG",
+          "jobTitle": "Co-Founder",
+          "description": "M.S. Data Science, University of Virginia. Over a decade in cross-border product and operations bridging U.S. and China teams."
+        },
+        {
+          "@type": "Person",
+          "name": "Cihan \"Barry\" CHEN",
+          "jobTitle": "Co-Founder",
+          "description": "M.Sc. Computer Science, University of Oxford. Former software development engineer at Amazon Web Services."
+        }
+      ],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Shenzhen",
+          "addressCountry": "CN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Shanghai",
+          "addressCountry": "CN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Fuzhou",
+          "addressCountry": "CN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressRegion": "California",
+          "addressCountry": "US"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://movetochinanow.com/china-permanent-residency-requirements-for-foreigners-2026/#article",
+      "headline": "China Permanent Residency Requirements for Foreigners (2026)",
+      "description": "China's permanent residence permit (green card / Five-Star Card) in 2026 \u2014 full requirements across all four pathways: professional, spouse, investor, and long-stay. Documents, timeline, who qualifies.",
+      "datePublished": "2026-05-27",
+      "dateModified": "2026-05-27",
+      "author": {
+        "@id": "https://seresimmigration.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://seresimmigration.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://movetochinanow.com/china-permanent-residency-requirements-for-foreigners-2026"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is 'China green card' the same as 'permanent residence permit'?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes \u2014 'China green card', 'Chinese permanent residence permit', and 'Five-Star Card' all refer to the same document, officially called the Foreign Permanent Resident ID Card. The card is valid for 10 years and renewable. The Chinese government uses 'permanent residence permit' in formal documents; 'green card' is the popular Western shorthand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does permanent residency in China lead to Chinese citizenship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No \u2014 permanent residence and citizenship are entirely separate statuses. PR lets you live and work in China indefinitely without renewing your visa. Citizenship requires giving up your original passport (China does not allow dual citizenship) and is approved at the discretion of the Ministry of Public Security. Most foreign PR holders stay on PR indefinitely rather than naturalize."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which PR route is easiest to qualify for in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends entirely on your situation. The professional/employment route is the most common for working foreigners but has high salary and tax thresholds. The spouse route requires 5 consecutive years of marriage and residence. The investor route requires substantial capital tied up for 3+ years. There is no universally 'easiest' route \u2014 the right route is the one your circumstances actually fit. Book a free consultation to find out which applies to you."
+          }
+        }
+      ]
+    }
+  ]
+};
+
+const body = `<style data-draft-styles="true">
+/* ============================================================
+       DESIGN TOKENS & RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :host {
+      --color-navy:       #0d1f3c;
+      --color-navy-mid:   #1a3358;
+      --color-navy-light: #2a4a70;
+      --color-gold:       #c8922a;
+      --color-gold-light: #e8ab3f;
+      --color-cream:      #f5f1eb;
+      --color-cream-dark: #ede7dc;
+      --color-white:      #ffffff;
+      --color-text:       #1c2a3a;
+      --color-text-muted: #5a6a7a;
+      --color-border:     #d5cfc6;
+      --color-success:    #1e7d54;
+
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  16px;
+
+      --shadow-card: 0 2px 12px rgba(13,31,60,0.09);
+      --shadow-lift: 0 6px 28px rgba(13,31,60,0.14);
+
+      --max-w: 1140px;
+      --section-py: 80px;
+    }
+
+    html { scroll-behavior: smooth; }
+    :host > .editorContent {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-cream);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--color-gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-navy);
+      line-height: 1.25;
+    }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    h4 { font-size: 1.05rem; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 12px;
+    }
+
+    p { margin-bottom: 1em; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .text-balance { text-wrap: balance; }
+    .text-muted { color: var(--color-text-muted); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+    .btn-primary {
+      background: var(--color-gold);
+      color: var(--color-white);
+      border-color: var(--color-gold);
+    }
+    .btn-primary:hover { background: var(--color-gold-light); border-color: var(--color-gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--color-white);
+      border-color: rgba(255,255,255,0.55);
+    }
+    .btn-outline:hover { border-color: var(--color-white); background: rgba(255,255,255,0.08); }
+    .btn-navy {
+      background: var(--color-navy);
+      color: var(--color-white);
+      border-color: var(--color-navy);
+    }
+    .btn-navy:hover { background: var(--color-navy-mid); border-color: var(--color-navy-mid); }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .badge-gold { background: var(--color-gold); color: var(--color-white); }
+    .badge-navy { background: var(--color-navy); color: var(--color-white); }
+    .badge-green { background: var(--color-success); color: var(--color-white); }
+    .badge-outline { border: 1px solid var(--color-border); color: var(--color-text-muted); background: transparent; }
+
+    .divider {
+      height: 1px;
+      background: var(--color-border);
+      border: none;
+      margin: 0;
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-navy);
+      border-bottom: 3px solid var(--color-gold);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      height: 62px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--color-gold);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-white);
+      font-weight: 700;
+    }
+    .nav-logo-text span { color: var(--color-gold-light); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.875rem;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--color-white); background: rgba(255,255,255,0.08); }
+    .nav-cta { margin-left: 16px; }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-white);
+      border-radius: 2px;
+    }
+    .mobile-menu {
+      display: none;
+      background: var(--color-navy-mid);
+      padding: 16px 24px 20px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--color-gold-light); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      background: var(--color-navy);
+      background-image:
+        radial-gradient(ellipse at 70% 40%, rgba(200,146,42,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(42,74,112,0.4) 0%, transparent 50%);
+      padding: 72px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light), var(--color-gold));
+    }
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero-content { flex: 1; min-width: 0; }
+    .hero-media { flex: 0 0 420px; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,146,42,0.15);
+      border: 1px solid rgba(200,146,42,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 22px;
+    }
+    .hero-eyebrow-dot {
+      width: 7px; height: 7px;
+      background: var(--color-gold-light);
+      border-radius: 50%;
+    }
+    .hero-eyebrow-text {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+    }
+    .hero h1 {
+      color: var(--color-white);
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      color: var(--color-gold-light);
+      font-style: normal;
+    }
+    .hero-lead {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      line-height: 1.65;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 42px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-stat-value {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--color-gold-light);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+    }
+
+    /* Hero media: info card placeholder */
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .hero-card-header {
+      background: var(--color-gold);
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-card-header-icon {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-card-header-title {
+      font-family: var(--font-heading);
+      color: var(--color-white);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .hero-card-body { padding: 22px; }
+    .route-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .route-pill:last-child { border-bottom: none; }
+    .route-pill-name {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .route-pill-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 12px;
+    }
+    .tag-easy { background: rgba(30,125,84,0.25); color: #5ce0a0; }
+    .tag-med  { background: rgba(200,146,42,0.25); color: var(--color-gold-light); }
+    .tag-hard { background: rgba(180,50,50,0.2); color: #f08080; }
+
+    /* ============================================================
+       TRUST BAR
+    ============================================================ */
+    .trust-bar {
+      background: var(--color-cream-dark);
+      border-bottom: 1px solid var(--color-border);
+      padding: 18px 0;
+    }
+    .trust-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-navy);
+    }
+    .trust-item-icon {
+      width: 28px; height: 28px;
+      background: var(--color-navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       SECTION SHARED
+    ============================================================ */
+    .section { padding: var(--section-py) 0; }
+    .section-alt { background: var(--color-white); }
+    .section-navy { background: var(--color-navy); }
+    .section-cream { background: var(--color-cream); }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header h2 { margin-bottom: 14px; }
+    .section-header p { color: var(--color-text-muted); font-size: 1.05rem; }
+    .section-navy .section-header h2 { color: var(--color-white); }
+    .section-navy .section-header p { color: rgba(255,255,255,0.65); }
+    .section-navy .section-label { color: var(--color-gold-light); }
+
+    /* ============================================================
+       SECTION 1: ROUTES COMPARISON
+    ============================================================ */
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .route-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .route-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+    .route-card.featured { border-color: var(--color-gold); border-width: 2px; }
+    .route-card-top {
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .route-card.featured .route-card-top { background: var(--color-navy); }
+    .route-card-number {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .route-card.featured .route-card-number { color: var(--color-gold-light); }
+    .route-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-navy);
+      margin-bottom: 6px;
+    }
+    .route-card.featured .route-card-title { color: var(--color-white); }
+    .route-card-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+    .route-card.featured .route-card-desc { color: rgba(255,255,255,0.65); }
+    .route-card-body {
+      padding: 18px 22px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .route-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--color-border);
+    }
+    .route-stat:last-of-type { border-bottom: none; }
+    .route-stat-key {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .route-stat-val {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      text-align: right;
+      max-width: 55%;
+    }
+    .featured-ribbon {
+      background: var(--color-gold);
+      color: var(--color-white);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 5px;
+    }
+
+    /* ============================================================
+       SECTION 2: TIMELINE
+    ============================================================ */
+    .timeline { position: relative; padding-left: 36px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--color-border);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 36px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -36px;
+      top: 4px;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      border: 3px solid var(--color-cream);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 3px rgba(200,146,42,0.2);
+    }
+    .timeline-dot-num {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--color-white);
+    }
+    .timeline-phase {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 4px;
+    }
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-navy);
+      margin-bottom: 6px;
+    }
+    .timeline-body {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    .timeline-duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-navy);
+      background: var(--color-cream-dark);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+    .timeline-aside {
+      background: var(--color-navy);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      height: fit-content;
+    }
+    .timeline-aside-title {
+      font-family: var(--font-heading);
+      color: var(--color-white);
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .aside-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .aside-row:last-child { border-bottom: none; }
+    .aside-key { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+    .aside-val { font-size: 0.88rem; font-weight: 600; color: var(--color-white); }
+    .expedite-banner {
+      margin-top: 20px;
+      background: rgba(200,146,42,0.15);
+      border: 1px solid rgba(200,146,42,0.3);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+    .expedite-banner-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      margin-bottom: 5px;
+    }
+    .expedite-banner-text {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    /* Two-column layout helper */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ============================================================
+       SECTION 3: DOCUMENTS
+    ============================================================ */
+    .doc-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--color-cream-dark);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 4px;
+      margin-bottom: 28px;
+      width: fit-content;
+      flex-wrap: wrap;
+    }
+    .doc-tab {
+      padding: 9px 18px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      background: transparent;
+      color: var(--color-text-muted);
+    }
+    .doc-tab.active {
+      background: var(--color-navy);
+      color: var(--color-white);
+    }
+    .doc-tab:hover:not(.active) { background: var(--color-cream); }
+
+    .doc-panel { display: none; }
+    .doc-panel.active { display: block; }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--color-cream);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      transition: border-color 0.15s;
+    }
+    .checklist-item:hover { border-color: var(--color-gold); }
+    .checklist-icon {
+      width: 22px; height: 22px;
+      background: var(--color-success);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .checklist-text { font-size: 0.88rem; line-height: 1.5; }
+    .checklist-text strong { display: block; margin-bottom: 2px; color: var(--color-navy); font-size: 0.9rem; }
+    .checklist-text span { color: var(--color-text-muted); font-size: 0.82rem; }
+    .doc-note {
+      margin-top: 20px;
+      background: rgba(200,146,42,0.08);
+      border-left: 3px solid var(--color-gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+    .doc-note strong { color: var(--color-navy); }
+
+    /* ============================================================
+       SECTION 4: STEP-BY-STEP PROCESS
+    ============================================================ */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+    .step-item {
+      padding: 28px 24px;
+      position: relative;
+    }
+    .step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: var(--color-border);
+    }
+    .step-num {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-cream-dark);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .step-item:hover .step-num { color: rgba(200,146,42,0.2); }
+    .step-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--color-navy);
+      margin-bottom: 8px;
+    }
+    .step-body {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    .step-tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      background: var(--color-navy);
+      color: var(--color-white);
+      border-radius: 20px;
+    }
+    .steps-cta-bar {
+      background: var(--color-navy);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+    .steps-cta-bar-text { color: rgba(255,255,255,0.8); font-size: 1.05rem; max-width: 500px; }
+    .steps-cta-bar-text strong { color: var(--color-white); display: block; font-size: 1.2rem; font-family: var(--font-heading); margin-bottom: 4px; }
+
+    /* ============================================================
+       SECTION 5: PRICING
+    ============================================================ */
+    .pricing-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 40px;
+      align-items: start;
+    }
+    .pricing-table {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .pricing-table-head {
+      background: var(--color-navy);
+      display: grid;
+      grid-template-columns: 1fr 100px 100px 110px;
+      padding: 12px 20px;
+      gap: 8px;
+    }
+    .pricing-table-head span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr 100px 100px 110px;
+      padding: 14px 20px;
+      gap: 8px;
+      align-items: center;
+      border-bottom: 1px solid var(--color-border);
+      transition: background 0.15s;
+    }
+    .pricing-row:last-child { border-bottom: none; }
+    .pricing-row:hover { background: var(--color-cream); }
+    .pricing-row-name { font-size: 0.9rem; font-weight: 600; color: var(--color-navy); }
+    .pricing-row-sub { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 2px; font-weight: 400; }
+    .pricing-row-price { font-size: 0.9rem; font-weight: 700; color: var(--color-navy); }
+    .pricing-row-volume { font-size: 0.82rem; color: var(--color-success); font-weight: 600; }
+    .pricing-row-time { font-size: 0.82rem; color: var(--color-text-muted); }
+
+    .volume-calc {
+      background: var(--color-navy);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      color: var(--color-white);
+    }
+    .volume-calc-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .calc-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+    .calc-select, .calc-input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+      color: var(--color-white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      appearance: none;
+    }
+    .calc-select option { background: var(--color-navy); }
+    .calc-result {
+      background: rgba(200,146,42,0.15);
+      border: 1px solid rgba(200,146,42,0.3);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-top: 6px;
+    }
+    .calc-result-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-gold-light); margin-bottom: 6px; }
+    .calc-result-price { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--color-gold-light); line-height: 1; }
+    .calc-result-sub { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 5px; }
+    .calc-btn {
+      width: 100%;
+      margin-top: 14px;
+      padding: 12px;
+      background: var(--color-gold);
+      color: var(--color-white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .calc-btn:hover { background: var(--color-gold-light); }
+
+    /* ============================================================
+       SECTION 6: WHY CHOOSE US / CREDENTIALS
+    ============================================================ */
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .cred-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cred-card:hover { border-color: var(--color-gold); background: rgba(255,255,255,0.07); }
+    .cred-icon {
+      width: 48px; height: 48px;
+      background: rgba(200,146,42,0.15);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .cred-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-white);
+      margin-bottom: 8px;
+    }
+    .cred-body {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+    .cred-cert {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      background: rgba(200,146,42,0.1);
+      border: 1px solid rgba(200,146,42,0.2);
+      border-radius: 20px;
+      padding: 4px 10px;
+    }
+    .cert-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 48px;
+      justify-content: center;
+    }
+    .cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+    }
+    .cert-badge-icon {
+      width: 36px; height: 36px;
+      background: var(--color-gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cert-badge-label { font-size: 0.8rem; font-weight: 700; color: var(--color-white); }
+    .cert-badge-sub { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 1px; }
+
+    /* ============================================================
+       SECTION 7: FAQ
+    ============================================================ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-item {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: var(--color-white);
+    }
+    .faq-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 18px 22px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-trigger:hover { background: var(--color-cream); }
+    .faq-trigger[aria-expanded="true"] { background: var(--color-cream); }
+    .faq-question {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--color-navy);
+      flex: 1;
+    }
+    .faq-icon {
+      width: 22px; height: 22px;
+      border: 2px solid var(--color-border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .faq-trigger[aria-expanded="true"] .faq-icon {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      transform: rotate(45deg);
+    }
+    .faq-body {
+      display: none;
+      padding: 0 22px 20px;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .faq-body.open { display: block; }
+
+    /* ============================================================
+       SECTION 8: CONTACT / CTA
+    ============================================================ */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info { }
+    .contact-info h2 { color: var(--color-white); margin-bottom: 16px; }
+    .contact-info p { color: rgba(255,255,255,0.65); font-size: 1rem; margin-bottom: 32px; }
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-channel {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .contact-channel:hover { border-color: var(--color-gold); background: rgba(255,255,255,0.07); text-decoration: none; }
+    .contact-channel-icon {
+      width: 38px; height: 38px;
+      background: var(--color-gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-channel-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+    .contact-channel-value { font-size: 0.95rem; font-weight: 600; color: var(--color-white); }
+
+    .contact-form-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      box-shadow: var(--shadow-lift);
+    }
+    .contact-form-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--color-navy);
+      margin-bottom: 22px;
+    }
+    .form-row { margin-bottom: 16px; }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-muted);
+      margin-bottom: 5px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-text);
+      background: var(--color-white);
+      transition: border-color 0.15s;
+      appearance: none;
+    }
+    .form-control:focus { outline: none; border-color: var(--color-gold); }
+    textarea.form-control { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%;
+      padding: 13px;
+      background: var(--color-gold);
+      color: var(--color-white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--color-gold-light); }
+    .form-disclaimer { font-size: 0.76rem; color: var(--color-text-muted); margin-top: 10px; text-align: center; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--color-navy-mid);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 48px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-white);
+      margin-bottom: 10px;
+    }
+    .footer-brand-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .footer-col-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 14px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--color-gold-light); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 960px) {
+      :host { --section-py: 60px; }
+      .hero-inner { flex-direction: column; gap: 40px; }
+      .hero-media { flex: 0 0 auto; width: 100%; max-width: 480px; }
+      .two-col { grid-template-columns: 1fr; gap: 32px; }
+      .pricing-layout { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .step-item:not(:last-child)::after { display: none; }
+      .steps-grid { gap: 1px; background: var(--color-border); }
+      .step-item { background: var(--color-cream); }
+      .pricing-table-head, .pricing-row { grid-template-columns: 1fr 80px 80px 90px; }
+    }
+
+    @media (max-width: 640px) {
+      :host { --section-py: 48px; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-stats { gap: 20px; flex-wrap: wrap; }
+      .routes-grid { grid-template-columns: 1fr; }
+      .checklist { grid-template-columns: 1fr; }
+      .creds-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row-2 { grid-template-columns: 1fr; }
+      .pricing-table-head { display: none; }
+      .pricing-row { grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+      .pricing-row-volume { display: none; }
+      .steps-cta-bar { flex-direction: column; align-items: flex-start; }
+      .doc-tabs { overflow-x: auto; }
+      .trust-bar-inner { gap: 16px; justify-content: flex-start; overflow-x: auto; padding: 0 20px; }
+    }
+</style>
+<section class="section section-cream" id="routes" aria-labelledby="routes-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">PR Pathways 2026</span>
+          <h2 id="routes-heading" class="text-balance">The 4 Routes to China Permanent Residency</h2>
+          <p>China&apos;s Permanent Residence Card &mdash; also called the <strong>Five-Star Card</strong>, the &ldquo;China green card&rdquo;, or formally the Foreigner&apos;s Permanent Residence ID Card &mdash; is issued under four eligibility categories defined by Ministry of Public Security Order No. 74: Investment-Based, Employment-Based, Special Contributions, and Family Reunion (Spouse).</p>
+        </div>
+
+        <div class="routes-grid" role="list" aria-label="China green card routes">
+
+          <article class="route-card" role="listitem">
+            <div class="route-card-top">
+              <div class="route-card-number">Route 01</div>
+              <h3 class="route-card-title">Investment-Based</h3>
+              <p class="route-card-desc">For foreign investors with stable, sustained capital investment in a mainland Chinese enterprise.</p>
+            </div>
+            <div class="route-card-body">
+              <div class="route-stat"><span class="route-stat-key">Investment</span><span class="route-stat-val">Stable, sustained</span></div>
+              <div class="route-stat"><span class="route-stat-key">Tax Record</span><span class="route-stat-val">3 years, good standing</span></div>
+              <div class="route-stat"><span class="route-stat-key">Residency</span><span class="route-stat-val">3+ months/year</span></div>
+              <div class="route-stat"><span class="route-stat-key">Thresholds</span><span class="route-stat-val">Vary by region</span></div>
+              <div class="route-stat"><span class="route-stat-key">Difficulty</span><span class="route-stat-val"><span class="badge badge-navy">High</span></span></div>
+            </div>
+          </article>
+
+          <article class="route-card featured" role="listitem">
+            <div class="featured-ribbon">Most Popular Route</div>
+            <div class="route-card-top">
+              <div class="route-card-number">Route 02</div>
+              <h3 class="route-card-title">Employment-Based</h3>
+              <p class="route-card-desc">For foreigners holding senior positions at Chinese enterprises, public institutions, or research bodies &mdash; the 4 consecutive years of employment pathway.</p>
+            </div>
+            <div class="route-card-body">
+              <div class="route-stat"><span class="route-stat-key">Employment</span><span class="route-stat-val">4 consecutive years</span></div>
+              <div class="route-stat"><span class="route-stat-key">Residency</span><span class="route-stat-val">3 of 4 years, 9+ mo/yr</span></div>
+              <div class="route-stat"><span class="route-stat-key">Salary Threshold</span><span class="route-stat-val">Set by city tier</span></div>
+              <div class="route-stat"><span class="route-stat-key">Tax Record</span><span class="route-stat-val">3 years, good standing</span></div>
+              <div class="route-stat"><span class="route-stat-key">Difficulty</span><span class="route-stat-val"><span class="badge badge-gold">Moderate</span></span></div>
+            </div>
+          </article>
+
+          <article class="route-card" role="listitem">
+            <div class="route-card-top">
+              <div class="route-card-number">Route 03</div>
+              <h3 class="route-card-title">Special Contributions</h3>
+              <p class="route-card-desc">For foreigners whose work makes a recognized contribution to China &mdash; typically researchers, senior specialists, or holders of national/provincial awards.</p>
+            </div>
+            <div class="route-card-body">
+              <div class="route-stat"><span class="route-stat-key">Recognition</span><span class="route-stat-val">National / provincial</span></div>
+              <div class="route-stat"><span class="route-stat-key">Endorsement</span><span class="route-stat-val">Sponsoring institution</span></div>
+              <div class="route-stat"><span class="route-stat-key">Documentation</span><span class="route-stat-val">Awards + work record</span></div>
+              <div class="route-stat"><span class="route-stat-key">Eligibility</span><span class="route-stat-val">Case-by-case</span></div>
+              <div class="route-stat"><span class="route-stat-key">Difficulty</span><span class="route-stat-val"><span class="badge badge-green">Accessible</span></span></div>
+            </div>
+          </article>
+
+          <article class="route-card" role="listitem">
+            <div class="route-card-top">
+              <div class="route-card-number">Route 04</div>
+              <h3 class="route-card-title">Family Reunion (Spouse)</h3>
+              <p class="route-card-desc">For foreigners married to a Chinese citizen &mdash; see our <a href="/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/" style="text-decoration:underline;">dedicated spouse-route guide</a> for full requirements.</p>
+            </div>
+            <div class="route-card-body">
+              <div class="route-stat"><span class="route-stat-key">Marriage</span><span class="route-stat-val">5+ years to a Chinese citizen</span></div>
+              <div class="route-stat"><span class="route-stat-key">Residency</span><span class="route-stat-val">5 consecutive years, 9+ mo/yr</span></div>
+              <div class="route-stat"><span class="route-stat-key">Bank Balance</span><span class="route-stat-val">Set by city (often 200,000 RMB)</span></div>
+              <div class="route-stat"><span class="route-stat-key">Documents</span><span class="route-stat-val">Marriage cert, joint residence</span></div>
+              <div class="route-stat"><span class="route-stat-key">Difficulty</span><span class="route-stat-val"><span class="badge badge-green">Lower Barrier</span></span></div>
+            </div>
+          </article>
+
+        </div>
+
+        <p style="margin-top:20px; font-size:0.82rem; color:var(--color-text-muted); text-align:center;">
+          Eligibility thresholds vary by city tier and route. Beijing, Shanghai, Guangzhou, and Shenzhen apply the highest standards. All four categories are defined by Ministry of Public Security Order No. 74 (2004, current). Exact thresholds are city-specific &mdash; we review your situation in a free consultation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: TIMELINE ===== -->
+    <section class="section section-alt" id="timeline" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Processing Timeline</span>
+          <h2 id="timeline-heading" class="text-balance">Detailed Timeline for China Green Card Applications 2026</h2>
+          <p>The full application moves through six phases. End-to-end timing is up to six months from submission &mdash; on top of the qualifying years required by your route.</p>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <ol class="timeline" aria-label="Application timeline phases">
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"><span class="timeline-dot-num">1</span></div>
+                <div class="timeline-phase">Phase 1</div>
+                <h3 class="timeline-title">Eligibility Assessment &amp; Route Selection</h3>
+                <p class="timeline-body">Determine which of the four Ministry of Public Security categories applies to you: Investment-Based, Employment-Based, Special Contributions, or Family Reunion. Review income documentation, tax records, employment contracts, and residency history against the criteria your city tier applies.</p>
+                <span class="timeline-duration">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  1–2 weeks
+                </span>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"><span class="timeline-dot-num">2</span></div>
+                <div class="timeline-phase">Phase 2</div>
+                <h3 class="timeline-title">Document Collection &amp; Authentication</h3>
+                <p class="timeline-body">Gather all required documents, obtain apostilles (or consular legalization for non-Hague signatories), arrange certified Simplified Chinese translations, and complete notarization. Foreign documents typically must be authenticated within 6 months of filing.</p>
+                <span class="timeline-duration">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  4–8 weeks
+                </span>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"><span class="timeline-dot-num">3</span></div>
+                <div class="timeline-phase">Phase 3</div>
+                <h3 class="timeline-title">Medical Examination &amp; Health Clearance</h3>
+                <p class="timeline-body">Complete the mandatory health examination at a Chinese designated medical institution &mdash; only PSB-listed facilities are accepted, not any clinic. Results are valid for 12 months.</p>
+                <span class="timeline-duration">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  1–3 weeks
+                </span>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"><span class="timeline-dot-num">4</span></div>
+                <div class="timeline-phase">Phase 4</div>
+                <h3 class="timeline-title">Application Submission at Local PSB</h3>
+                <p class="timeline-body">Submit your complete application dossier to the Entry-Exit Administration Bureau of your local Public Security Bureau (PSB). Submission is in person; the officer may request supplementary documents on the spot.</p>
+                <span class="timeline-duration">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  1 day (appointment)
+                </span>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"><span class="timeline-dot-num">5</span></div>
+                <div class="timeline-phase">Phase 5</div>
+                <h3 class="timeline-title">Review, Interview (if Required) &amp; Decision</h3>
+                <p class="timeline-body">Local PSB conducts an investigation (up to 3 months) and the inspection authority reviews the dossier (up to 2 months). The National Immigration Administration grants final approval. Any request for supplementary evidence (RFE) should be answered promptly to keep the file moving.</p>
+                <span class="timeline-duration">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  3–9 months
+                </span>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"><span class="timeline-dot-num">6</span></div>
+                <div class="timeline-phase">Phase 6</div>
+                <h3 class="timeline-title">Card Issuance &amp; Registration</h3>
+                <p class="timeline-body">Upon approval, collect your 10-year Permanent Residence Card (the Five-Star Card). Register your new status with local authorities and update tax, banking, and property records to reflect your PR status.</p>
+                <span class="timeline-duration">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  1–2 weeks
+                </span>
+              </li>
+            </ol>
+          </div>
+
+          <aside class="timeline-aside" aria-label="Processing summary and expedite information">
+            <div class="timeline-aside-title">Processing Summary</div>
+            <div class="aside-row"><span class="aside-key">End-to-end</span><span class="aside-val">Up to 6 months from submission</span></div>
+            <div class="aside-row"><span class="aside-key">Card Validity</span><span class="aside-val">10 years, renewable</span></div>
+            <div class="aside-row"><span class="aside-key">Minor Cards</span><span class="aside-val">5 years (under 18)</span></div>
+            <div class="aside-row"><span class="aside-key">Government Fees</span><span class="aside-val">CNY 1,800 (1,500 + 300)</span></div>
+            <div class="aside-row"><span class="aside-key">Document Auth.</span><span class="aside-val">Apostille / consular legalization</span></div>
+            <div class="aside-row"><span class="aside-key">Health Check</span><span class="aside-val">Designated facility only</span></div>
+
+            <a href="/consultation" class="btn btn-primary" style="width:100%; margin-top:18px; justify-content:center;">Book Free Consultation</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: DOCUMENTS ===== -->
+    <section class="section section-cream" id="documents" aria-labelledby="docs-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Required Documents</span>
+          <h2 id="docs-heading" class="text-balance">Document Requirements for China Permanent Residency Application 2026</h2>
+          <p>Every route has a distinct document set. Select your pathway below to see the exact checklist. All originals must be accompanied by certified Simplified Chinese translations.</p>
+        </div>
+
+        <div class="doc-tabs" role="tablist" aria-label="Document checklists by route">
+          <button class="doc-tab active" role="tab" aria-selected="true" aria-controls="panel-talent" onclick="switchTab(this,'panel-talent')">Special Contributions</button>
+          <button class="doc-tab" role="tab" aria-selected="false" aria-controls="panel-employment" onclick="switchTab(this,'panel-employment')">Employment-Based</button>
+          <button class="doc-tab" role="tab" aria-selected="false" aria-controls="panel-investment" onclick="switchTab(this,'panel-investment')">Investment-Based</button>
+          <button class="doc-tab" role="tab" aria-selected="false" aria-controls="panel-family" onclick="switchTab(this,'panel-family')">Family Reunion (Spouse)</button>
+        </div>
+
+        <!-- Talent Panel -->
+        <div class="doc-panel active" id="panel-talent" role="tabpanel">
+          <div class="checklist" aria-label="Talent route document checklist">
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Valid Passport (original + copy)</strong><span>All pages; valid for 6+ months; previous passports if applicable</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Completed Application Form (Form CRI-001)</strong><span>Downloaded from MPS website; completed in Simplified Chinese</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Academic Credentials</strong><span>Degree certificates and transcripts; apostilled and translated into Simplified Chinese</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>National or Provincial Award Certificates</strong><span>State-level or recognized provincial honors; officially notarized</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Employer Recommendation Letter</strong><span>On letterhead; signed by legal representative; details role and salary</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Work Permit (A-Category)</strong><span>Current valid SAFEA A-Category work permit copy</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Proof of Income (3 years)</strong><span>Bank statements, pay slips, or tax declarations showing 3x local average wage</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Individual Income Tax Records (3 years)</strong><span>Official IIT certificates from local tax bureau; no outstanding arrears</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>No-Criminal Record Certificate</strong><span>From both country of origin (apostilled) and Chinese local police (PAP)</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Medical Examination Report</strong><span>From designated medical institution; valid within 12 months of submission</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Proof of Residence in China</strong><span>Property ownership deed or notarized long-term rental contract (&gt;12 months)</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Recent Passport-Size Photos (6 copies)</strong><span>White background; 33mm x 48mm; taken within 6 months</span></div></div>
+          </div>
+          <div class="doc-note">
+            <strong>Talent Route Note:</strong> Academic publications (3+ peer-reviewed papers in the last 5 years) and patents granted in China or internationally can significantly strengthen your points score and may reduce processing time.
+          </div>
+        </div>
+
+        <!-- Employment Panel -->
+        <div class="doc-panel" id="panel-employment" role="tabpanel">
+          <div class="checklist">
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Valid Passport (original + copy)</strong><span>All bio-data pages; 6+ months validity at time of submission</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>A or B Category Work Permit</strong><span>Current SAFEA permit at executive or senior professional level</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Labor Contract (current)</strong><span>Notarized employment contract specifying title, salary, and duration</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Proof of Income (3 of last 4 years)</strong><span>Salary at or above the threshold set by your city tier; bank-verified statements</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Individual Income Tax Records (5 years)</strong><span>Full IIT compliance history; stamped by local tax bureau</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Social Insurance Contribution Records</strong><span>5-year uninterrupted social security payment history</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Employer Endorsement Letter</strong><span>On company letterhead, signed by CEO or HR director</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>No-Criminal Record Certificate</strong><span>Home country (apostilled) + China PAP certificate</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Medical Examination Report</strong><span>Designated institution; results valid within 12 months</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Proof of Residence</strong><span>Property deed or notarized rental contract</span></div></div>
+          </div>
+          <div class="doc-note">
+            <strong>Employment-Based Route Note:</strong> Applicants at state-owned enterprises and recognized national-key laboratories or research bodies may benefit from priority review. Eligibility depends on your specific employer and city &mdash; verify before applying.
+          </div>
+        </div>
+
+        <!-- Investment Panel -->
+        <div class="doc-panel" id="panel-investment" role="tabpanel">
+          <div class="checklist">
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Valid Passport (original + copy)</strong><span>All pages; 6+ months validity</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Business License (Chinese entity)</strong><span>Unified social credit code; active and in good standing</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Capital Injection Proof</strong><span>Bank transfer records and capital verification report from a licensed CPA firm; minimum amount varies by region and zone</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>3-Year Audited Financial Statements</strong><span>Certified by licensed Chinese accountant; annual profit/loss records</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Corporate Tax Payment Records</strong><span>Enterprise income tax receipts; VAT compliance records for 3 years</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Employment Record (10+ Chinese employees)</strong><span>Payroll records demonstrating local job creation for 3+ years</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>No-Criminal Record Certificate</strong><span>Home country (apostilled) + China PAP clearance</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Medical Examination Report</strong><span>Designated institution results</span></div></div>
+          </div>
+          <div class="doc-note">
+            <strong>Investment-Based Route Note:</strong> Investments in National Economic and Technological Development Zones (ETDZ) or Free Trade Zones may qualify under different (often lower) capital thresholds than other regions.
+          </div>
+        </div>
+
+        <!-- Family Panel -->
+        <div class="doc-panel" id="panel-family" role="tabpanel">
+          <div class="checklist">
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Valid Passport (original + copy)</strong><span>All bio-data pages; 6+ months validity</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Sponsor&apos;s Hukou or Permanent Residence Proof</strong><span>Notarized hukou booklet or current PR card of sponsoring relative</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Proof of Relationship</strong><span>Marriage certificate, birth certificate, or legal adoption papers (apostilled &amp; translated)</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Proof of Cohabitation (5 years)</strong><span>Joint household registration, utility bills, school enrollment records</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Sponsor Income and Asset Proof</strong><span>Bank statements showing ability to support dependent; property deeds</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>No-Criminal Record Certificate</strong><span>Home country (apostilled) + local PAP clearance for applicant</span></div></div>
+            <div class="checklist-item"><div class="checklist-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="checklist-text"><strong>Medical Examination Report</strong><span>Designated institution results; valid within 12 months</span></div></div>
+          </div>
+          <div class="doc-note">
+            <strong>Family Reunion Note:</strong> The 5-year marriage requirement is firm; applications below that threshold are generally rejected. Foreign marriage certificates must be apostilled (or consular-legalized for non-Hague signatories) and freshly notarized within 6 months of filing.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: STEP-BY-STEP PROCESS ===== -->
+    <section class="section section-alt" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">How to Apply</span>
+          <h2 id="process-heading" class="text-balance">The Application Process for China Permanent Residency</h2>
+          <p>Once you have met your route&apos;s qualifying years, every applicant follows the same submission and review process at the Public Security Bureau (PSB).</p>
+        </div>
+
+        <div class="steps-grid" role="list" aria-label="Application steps">
+          <div class="step-item" role="listitem">
+            <div class="step-num" aria-hidden="true">01</div>
+            <h3 class="step-title">Pre-Eligibility Check</h3>
+            <p class="step-body">Confirm route eligibility: verify work permit category (A or B), continuous residency years, and income benchmarks against the 2026 city-tier thresholds for your municipality.</p>
+            <span class="step-tag">Self / Specialist</span>
+          </div>
+          <div class="step-item" role="listitem">
+            <div class="step-num" aria-hidden="true">02</div>
+            <h3 class="step-title">Document Assembly</h3>
+            <p class="step-body">Collect and authenticate all required documents. Arrange apostilles (or consular legalization for non-Hague signatories) from your home country and certified translations into Simplified Chinese.</p>
+            <span class="step-tag">4–8 Weeks</span>
+          </div>
+          <div class="step-item" role="listitem">
+            <div class="step-num" aria-hidden="true">03</div>
+            <h3 class="step-title">Medical Exam Booking</h3>
+            <p class="step-body">Book at a Chinese designated institution &mdash; only PSB-listed facilities are accepted. Schedule early; popular locations book 3&ndash;4 weeks out.</p>
+            <span class="step-tag">1–3 Weeks</span>
+          </div>
+          <div class="step-item" role="listitem">
+            <div class="step-num" aria-hidden="true">04</div>
+            <h3 class="step-title">PSB Appointment</h3>
+            <p class="step-body">Book an appointment with the Entry-Exit Administration Bureau at the PSB of your municipality. Online booking via the national PSB portal is available in most tier-1 and tier-2 cities.</p>
+            <span class="step-tag">Book Online</span>
+          </div>
+          <div class="step-item" role="listitem">
+            <div class="step-num" aria-hidden="true">05</div>
+            <h3 class="step-title">Submit Dossier</h3>
+            <p class="step-body">Attend in person with the complete dossier. Pay the government fees (CNY 1,500 application + CNY 300 card issuance = CNY 1,800 total). Receive acknowledgment receipt and estimated decision date.</p>
+            <span class="step-tag">CNY 1,800 Fees</span>
+          </div>
+          <div class="step-item" role="listitem">
+            <div class="step-num" aria-hidden="true">06</div>
+            <h3 class="step-title">Await Decision</h3>
+            <p class="step-body">Local PSB investigation (up to 3 months) + inspection authority review (up to 2 months) + final approval by the National Immigration Administration. Respond promptly to any supplementary requests for evidence to keep your file moving.</p>
+            <span class="step-tag">3–9 Months</span>
+          </div>
+        </div>
+
+        <div class="steps-cta-bar">
+          <div class="steps-cta-bar-text">
+            <strong>Need help navigating the process?</strong>
+            Seres Immigration handles end-to-end PR applications across all four routes. Book a free consultation to confirm your eligibility and outline next steps.
+          </div>
+          <a href="/consultation" class="btn btn-primary">Book Free Consultation</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===== SECTION 7: FAQ ===== -->
+    <section class="section section-cream" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Frequently Asked Questions</span>
+          <h2 id="faq-heading" class="text-balance">Common Questions About China Permanent Residency in 2026</h2>
+          <p>Answers to the most frequently asked questions from foreign nationals navigating the application process.</p>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span class="faq-question">How can I apply for permanent residency in China as a foreigner in 2026?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              You apply for China permanent residency by first identifying which of the four Ministry of Public Security categories applies: Investment-Based, Employment-Based, Special Contributions, or Family Reunion (Spouse). Once your route is confirmed, you authenticate foreign documents, gather Chinese-side supporting documents, complete the mandatory health examination at a designated facility, and submit at your local Public Security Bureau Entry-Exit Administration. End-to-end processing is up to six months from submission &mdash; on top of the qualifying residence years required by your route.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span class="faq-question">What are the necessary documents to prepare for a China permanent residency application in 2026?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              Required documents vary by route but universally include: a valid passport, completed PSB application form (Form CRI-001), proof of income (3–5 years), individual income tax records, no-criminal-record certificates from both your home country (apostilled) and Chinese authorities, a medical examination report from a designated institution, and proof of residence in China. For Special Contributions applicants, you will also need academic credentials, award certificates, and an endorsement from your sponsoring institution. All foreign-language documents must be accompanied by certified Simplified Chinese translations.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span class="faq-question">Can I expedite the process for obtaining permanent residency in China in 2026?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              There is no official government &ldquo;fast-track&rdquo; for most PR applications. The most effective way to avoid delays is meticulous document preparation: complete apostilles, certified translations, current tax records, and a health check at a designated facility. The Special Contributions route may be reviewed on a priority basis when a strong endorsement from a national or provincial body accompanies the file.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span class="faq-question">What fees are associated with applying for permanent residency in China in 2026?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              Government fees total CNY 1,800: CNY 1,500 application fee plus CNY 300 card issuance fee, paid directly to the PSB at submission. Additional costs to budget for: apostille fees (typically USD 50&ndash;200 per document, by country), certified translation (CNY 100&ndash;300 per page), the medical examination at a designated facility (approximately CNY 500&ndash;1,200), and notarization in China (CNY 200&ndash;800 per document). Total out-of-pocket without consultancy support typically runs CNY 5,000&ndash;15,000.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span class="faq-question">Where can I find professional assistance for securing China permanent residency in 2026?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              Seres Immigration is an immigration consultancy &mdash; not a legal practice &mdash; focused on Western expats relocating to China. We handle eligibility review, document preparation, PSB submission, and post-arrival settlement across all four PR routes. Our advisory team is led by US-trained attorneys and cross-border specialists based in Shenzhen, Shanghai, Fuzhou, and California, with senior review by Stephen YOU, J.D. (UVA Law). <a href="/consultation" style="text-decoration:underline;">Book a free consultation</a> to start.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span class="faq-question">What is the difference between a China Green Card and a permanent residence card?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              “China Green Card” is the informal name for the official Permanent Residence Card (PRC) for foreigners, formally known as the “Foreigner&apos;s Permanent Residence ID Card” (&#22916;&#21448;&#21517;: &#22806;&#22269;&#20154;&#27704;&#20037;&#23621;&#30041;&#36523;&#20221;&#35777;). The term “green card” is colloquially borrowed from the American equivalent. There is no separate document called a “green card” in the Chinese immigration system. The Permanent Residence Card is valid for 10 years and must be renewed at the PSB before expiry.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span class="faq-question">What income thresholds apply for the Employment-Based route in 2026?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              Salary thresholds for the Employment-Based route are not published as a single national figure &mdash; they are set by each city according to its tier and adjusted year to year. Beijing, Shanghai, Guangzhou, and Shenzhen apply the highest thresholds; second-tier cities apply lower ones. The threshold typically tracks several multiples of local average wages, accompanied by a matching individual income tax record. The most accurate number for your situation comes from your city&apos;s PSB Exit-Entry Administration or a consultation with someone who tracks the current city-by-city figures.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 8: CTA ===== -->
+    <section class="section section-navy" id="contact" aria-labelledby="contact-heading">
+      <div class="container container--narrow" style="text-align:center;">
+        <span class="section-label">Get Expert Help</span>
+        <h2 id="contact-heading" class="text-balance">Start Your China Permanent Residency Application</h2>
+        <p style="margin: 1rem 0 1.5rem;">Book a free 30-minute consultation with Seres Immigration. We&apos;ll review your eligibility across all four PR routes and outline the most realistic path for your situation.</p>
+        <a href="/consultation" class="btn btn-primary btn-lg">Book Free Consultation</a>
+      </div>
+    </section>
+`;
+const faqInject = `<aside class="faq-required-wrap" aria-label="Additional FAQs"><details class="faq-required"><summary>Is 'China green card' the same as 'permanent residence permit'?</summary><p>Yes — 'China green card', 'Chinese permanent residence permit', and 'Five-Star Card' all refer to the same document, officially called the Foreign Permanent Resident ID Card. The card is valid for 10 years and renewable. The Chinese government uses 'permanent residence permit' in formal documents; 'green card' is the popular Western shorthand.</p></details><details class="faq-required"><summary>Does permanent residency in China lead to Chinese citizenship?</summary><p>No — permanent residence and citizenship are entirely separate statuses. PR lets you live and work in China indefinitely without renewing your visa. Citizenship requires giving up your original passport (China does not allow dual citizenship) and is approved at the discretion of the Ministry of Public Security. Most foreign PR holders stay on PR indefinitely rather than naturalize.</p></details><details class="faq-required"><summary>Which PR route is easiest to qualify for in 2026?</summary><p>It depends entirely on your situation. The professional/employment route is the most common for working foreigners but has high salary and tax thresholds. The spouse route requires 5 consecutive years of marriage and residence. The investor route requires substantial capital tied up for 3+ years. There is no universally 'easiest' route — the right route is the one your circumstances actually fit. Book a free consultation to find out which applies to you.</p></details></aside>`;
+---
+
+<Layout
+  title="China Permanent Residency for Foreigners 2026 (Green Card)"
+  description="China's permanent residence permit (green card / Five-Star Card) in 2026 \u2014 full requirements across all four pathways: professional, spouse, investor, and long-stay. Documents, timeline, who qualifies."
+  canonical="https://movetochinanow.com/china-permanent-residency-requirements-for-foreigners-2026/"
+  ogType="article"
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schemaGraph)}></script>
+
+  <article class="page-china-permanent-residency-requirements-for-foreigners-2026">
+
+    <section class="hero hero--dark">
+      <div class="container">
+        <h1>China Permanent Residency Requirements for Foreigners (2026)</h1>
+        <p class="hero-sub">China's permanent residence permit (green card / Five-Star Card) in 2026 — full requirements across all four pathways: professional, spouse, investor, and long-stay. Documents, timeline, who qualifies.</p>
+        <div class="hero-actions">
+          <a href="/consultation" class="btn btn-primary btn-lg">Book Free Consultation</a>
+        </div>
+        <p class="hero-byline">By Seres Immigration's advisory team — US-trained attorneys and cross-border specialists based in Shenzhen, Shanghai, Fuzhou &amp; California · Updated May 2026</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container--narrow">
+        <Fragment set:html={body} />
+        <Fragment set:html={faqInject} />
+
+        <aside class="cta-band" aria-label="Book consultation" style="margin-top:3rem;padding:2rem;background:#1A1A1A;color:#fff;border-radius:8px;text-align:center;">
+          <h2 style="color:#fff;">Ready to take the next step?</h2>
+          <a href="/consultation" class="btn btn-primary btn-lg">Book Free Consultation</a>
+        </aside>
+      </div>
+    </section>
+
+  </article>
+
+  <style>
+    .page-china-permanent-residency-requirements-for-foreigners-2026 table { width: 100%; border-collapse: collapse; margin: 1.5em 0; }
+    .page-china-permanent-residency-requirements-for-foreigners-2026 th, .page-china-permanent-residency-requirements-for-foreigners-2026 td { border: 1px solid #e5e5e5; padding: 0.6em 0.9em; text-align: left; }
+    .page-china-permanent-residency-requirements-for-foreigners-2026 th { background: #f5f5f5; font-weight: 600; }
+    .page-china-permanent-residency-requirements-for-foreigners-2026 details.faq-required { border: 1px solid #e5e5e5; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.5rem 0; }
+    .page-china-permanent-residency-requirements-for-foreigners-2026 details.faq-required summary { cursor: pointer; font-weight: 600; }
+    /* Wrapper-class typography re-assertion per movetochinanow CLAUDE.md Astro scoping gotcha */
+    .page-china-permanent-residency-requirements-for-foreigners-2026 .hero h1 { color: #fff; }
+    .page-china-permanent-residency-requirements-for-foreigners-2026 .hero .hero-sub { color: rgba(255,255,255,.75); }
+    .page-china-permanent-residency-requirements-for-foreigners-2026 .hero .btn-primary { color: #fff; }
+    .page-china-permanent-residency-requirements-for-foreigners-2026 .hero .hero-byline { color: rgba(255,255,255,.6); }
+
+  </style>
+</Layout>
