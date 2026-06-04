@@ -1,0 +1,154 @@
+---
+/*
+ * GEO experiment #2 — fdichina-mold glossary entry, native to the site.
+ * Entity: China Z visa / Foreigner's Work Permit. Slug -> /china-z-visa-work-permit/.
+ * Formula: sites/movetochinanow/audits/fdichina-aio-teardown-2026-06-01.md
+ * Why this shape (not schema/length): [[project-movetochinanow-geo-citation-play]]
+ *
+ * Route: src/pages/china-z-visa-work-permit.astro -> /china-z-visa-work-permit/
+ * Copied structure verbatim from shipped experiment #1
+ * (china-permanent-residence-permit.astro). Prose = the 2026-06-04 dry-run draft
+ * with ALL 5 corrections applied, then verified by a 3-verifier adversarial
+ * fact-check (0 FAIL, all 5 corrections CONFIRMED):
+ *   provenance: sites/movetochinanow/cjgeo-output/2026-06-04/china-z-visa-work-permit-{prose,factcheck,fact-spine}.md
+ * Facts traced to NIA (Exit&Entry Law Art.30/39, Regs Art.18/36), s.nia.gov.cn fee
+ * schedule (400/800/1000), english.beijing.gov.cn work-permit timeline, the
+ * visaforchina.cn COVA enumerated-document list, and china-embassy/mfa.gov.cn.
+ *
+ * Schema deliberately MINIMAL (BreadcrumbList + DefinedTerm only) — fdichina's
+ * most-cited page carries BreadcrumbList only; schema is not the citation lever.
+ *
+ * Measure: re-run tools/aio_citation_probe.py ~3 weeks post-ship; success = we
+ * enter the AIO citation set on the Z-visa / china-work-permit query group.
+ */
+import Layout from "../layouts/Layout.astro";
+
+const CANONICAL = "https://movetochinanow.com/china-z-visa-work-permit/";
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://movetochinanow.com/" },
+        { "@type": "ListItem", "position": 2, "name": "China Z Visa & Work Permit", "item": CANONICAL },
+      ],
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": CANONICAL + "#term",
+      "name": "China Z Visa",
+      "alternateName": ["China Work Visa", "Foreigner's Work Permit"],
+      "description": "The China Z visa is the work visa issued by a Chinese embassy or consulate abroad to foreign nationals taking up employment in China. It is the entry component of a three-part authorization completed by the Foreigner's Work Permit (administered by the State Administration of Foreign Experts Affairs with the Ministry of Human Resources and Social Security) and a work-type residence permit issued by the local Public Security Bureau Exit-Entry Administration under the National Immigration Administration (NIA). A Z visa alone does not authorize work or long-term stay.",
+      "inDefinedTermSet": CANONICAL,
+    },
+  ],
+};
+
+const tocLinks = [
+  { label: "What it is", href: "#what-is" },
+  { label: "Relevance", href: "#relevance" },
+  { label: "Who qualifies", href: "#eligibility" },
+  { label: "How to apply", href: "#apply" },
+  { label: "Benefits", href: "#benefits" },
+];
+---
+
+<Layout
+  title="China Z Visa & Work Permit — Definition, Eligibility & How to Apply"
+  description="What a China Z visa and Foreigner's Work Permit are, who qualifies across the A/B/C tiers, how to apply across each authority, and the benefits of work-type residence in China."
+  canonical={CANONICAL}
+  ogType="article"
+  footerSections={tocLinks}
+  footerSectionsTitle="On This Page"
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schemaGraph)}></script>
+
+  <article class="page-china-z-visa-work-permit">
+    <section class="hero hero--dark">
+      <div class="container">
+        <h1>China Z Visa &amp; Foreigner&apos;s Work Permit</h1>
+        <p class="hero-sub">What the Z visa and Foreigner&apos;s Work Permit are, who qualifies across the A/B/C tiers, how to apply across each authority, and what they let you do in China.</p>
+        <p class="hero-byline">Reviewed by Seres Immigration&apos;s advisory team &middot; June 2026</p>
+      </div>
+    </section>
+
+    <div class="toc-bar">
+      <div class="container toc-inner">
+        <span class="toc-label">On this page</span>
+        {tocLinks.map((l) => <a class="toc-link" href={l.href}>{l.label}</a>)}
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container--narrow gloss">
+
+        <h2 id="what-is">What is a China Z visa &amp; Foreigner&apos;s Work Permit?</h2>
+        <p>The <strong>China Z visa</strong> is the work visa issued to foreign nationals who intend to take up employment in China. It is the entry component of a three-part authorization: a Chinese embassy or consulate abroad issues the Z visa (against a <strong>Notification Letter of Foreigner&apos;s Work Permit</strong> pre-approved through the State Administration of Foreign Experts Affairs (SAFEA) and the Ministry of Human Resources and Social Security (MOHRSS)); after entry the worker obtains the Foreigner&apos;s Work Permit card; and the local Public Security Bureau (PSB) Exit-Entry Administration, under the <strong>National Immigration Administration (NIA)</strong>, converts the visa into a work-type residence permit. A Z visa alone does <strong>not</strong> authorize work or long-term stay &mdash; the work permit and residence permit together complete the legal right to work and live in China.</p>
+
+        <h2 id="relevance">Relevance in China</h2>
+        <p>The Z visa and Foreigner&apos;s Work Permit are the only lawful route to salaried employment for most foreigners hired by a China-registered company, and the Z visa is the most common visa type used by foreigners working in China. A few obligations define how it works in practice:</p>
+        <ul>
+          <li><strong>It is an entry visa, not a work license.</strong> The Z visa gets you into China; the Foreigner&apos;s Work Permit card and the residence permit are what actually authorize employment and residence.</li>
+          <li><strong>A unified work-permit system has applied since 1 April 2017</strong>, replacing the older Alien Employment Permit and Foreign Expert Certificate with a single Foreigner&apos;s Work Permit administered by SAFEA together with MOHRSS, the Ministry of Foreign Affairs and the Ministry of Public Security.</li>
+          <li><strong>Residence-permit conversion is mandatory and time-boxed.</strong> Z visa holders (except those working 30 days or fewer) must apply for a work-type residence permit within 30 days of entry.</li>
+          <li><strong>Police registration depends on where you stay.</strong> If you stay in a hotel, it registers you with the police at check-in; in non-hotel lodging (a rented home, or staying with friends), you or your host must register your address with the local PSB within 24 hours of arrival (Exit and Entry Administration Law, Article 39).</li>
+          <li><strong>The employer drives the application.</strong> The hiring entity initiates the Foreigner&apos;s Work Permit application and obtains the Notification Letter that the visa stage depends on.</li>
+        </ul>
+
+        <h2 id="eligibility">Who is eligible</h2>
+        <p>Eligibility is decided through the Foreigner&apos;s Work Permit, which classifies applicants into three tiers (A, B, C) under SAFEA&apos;s point-scored evaluation. General baseline requirements are an age of at least 18 and normally not over 60, a clean criminal record with a police clearance certificate, and a genuine employment offer from a China-registered entity.</p>
+        <ul>
+          <li><strong>Category A &mdash; high-end talent (85+ points).</strong> Scientists, technological and specialized experts, international entrepreneurs and other urgently needed high-end talents. No fixed age, education or work-experience restrictions, and eligible for a &ldquo;green channel&rdquo; with faster processing.</li>
+          <li><strong>Category B &mdash; professional talent (60 to below 85 points).</strong> Foreign professionals with skills China needs; typically a bachelor&apos;s degree or equivalent as a minimum, at least 2 years of relevant post-graduation experience, and under 60. This tier covers the largest share of foreign workers in China.</li>
+          <li><strong>Category C &mdash; other workers (below 60 points).</strong> Foreigners meeting labor-market needs and national policy, including temporary, seasonal and lower-skilled workers; subject to quota controls, longer processing and shorter permit validity.</li>
+        </ul>
+        <p>The tier a worker falls into also shapes the duration of the residence permit issued later: up to 5 years for high-level talents, urgently needed professionals and investors; up to 2 years for workers at registered entities with a good track record; and up to 1 year for other personnel.</p>
+
+        <h2 id="apply">How to apply</h2>
+        <p>The sequence runs across several authorities, each owning one step. Begin only once you have a confirmed employer in China.</p>
+        <ol>
+          <li><strong>Work Permit Notification Letter (SAFEA / MOHRSS, before you travel).</strong> The employer applies online through the Service System for Foreigners Working in China (fwp.safea.gov.cn). After preliminary review, SAFEA/MOHRSS decide within about 10&ndash;15 working days (5 working days for Category A talents) and issue the Notification Letter &mdash; a free, pre-approval document you present at the visa stage.</li>
+          <li><strong>Z visa application (Chinese embassy or consulate abroad).</strong> With the Notification Letter of Foreigner&apos;s Work Permit &mdash; the work-authorization document (an Alien Employment License or another enumerated approval document where applicable) &mdash; plus your passport, the completed application form and a photo, apply for the Z visa at the embassy, consulate or other institution entrusted by China&apos;s Ministry of Foreign Affairs. The number of entries and validity are set by the issuing post on a case-by-case basis (Z visas are commonly issued single-entry).</li>
+          <li><strong>Entry and police registration.</strong> On arrival, if you stay in a hotel it registers you at check-in; in non-hotel lodging, register your residential address with the local PSB within 24 hours.</li>
+          <li><strong>Foreigner&apos;s Work Permit card (MOHRSS / SAFEA, in-country).</strong> Complete the medical examination if required and submit the post-arrival work-permit application; the Work Permit card carries a unique ID number that stays with you through renewals or employer changes. Workers staying more than 90 days must apply for the work permit within 30 days of entry.</li>
+          <li><strong>Work-type residence permit (PSB Exit-Entry Administration / NIA).</strong> Within 30 days of entry, file at the PSB Exit-Entry Administration with your passport, application form, photo, work permit and employer certification. When the office accepts the application it issues a receipt of acceptance and reaches a decision within that period &mdash; up to about 15 working days nationally (7 in Beijing); your stay during processing normally rests on your still-valid visa rather than on the receipt itself. Official fees run CNY 400 (up to 1 year), CNY 800 (1&ndash;3 years) and CNY 1,000 (3&ndash;5 years); permits over 1 year require a health certificate from a county-level-or-above medical authority. Issued permits are valid from 90 days to 5 years.</li>
+        </ol>
+
+        <h2 id="benefits">Benefits</h2>
+        <ul>
+          <li><strong>Lawful, full-time employment</strong> with a China-registered employer once the work permit and residence permit are in hand.</li>
+          <li><strong>Multiple-entry residence in China</strong> on the work-type residence permit, without re-applying for a visa on each trip.</li>
+          <li><strong>A stable identity record</strong> &mdash; the Foreigner&apos;s Work Permit card keeps the same ID number across renewals and changes of employer.</li>
+          <li><strong>A pathway to longer stays for stronger profiles</strong> &mdash; Category A and other high-level talents can receive residence permits of up to 5 years.</li>
+          <li><strong>A foundation for family arrangements and, over time, for permanent-residence routes</strong> &mdash; a documented work and tax history in China supports a later application for the <a href="/china-permanent-residence-permit/" class="inline-link">China permanent residence permit</a>.</li>
+        </ul>
+
+        <aside class="gloss-help">
+          <p><strong>How Seres Immigration can help.</strong> Seres is an immigration consultancy focused on Western expats relocating to China &mdash; work-permit tier assessment, employer-side document preparation, Z visa filing, and the post-arrival work-permit and residence-permit conversion within the 30-day window. <a href="/consultation" class="inline-link">Book a free consultation</a> to map your route before your employer starts the application.</p>
+        </aside>
+
+      </div>
+    </section>
+  </article>
+
+  <style>
+    .gloss h2 { margin-top: 2.25rem; }
+    .gloss p { margin: 0.75rem 0; }
+    .gloss ul, .gloss ol { margin: 0.75rem 0 1rem 1.25rem; }
+    .gloss li { margin-bottom: 0.5rem; }
+    .gloss-help {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--cream, #f5f1eb);
+      border-left: 3px solid var(--gold, #c8922a);
+      border-radius: 0 8px 8px 0;
+    }
+    .gloss-help p { margin: 0; }
+    /* Astro scoping gotcha — re-assert hero/CTA typography per site CLAUDE.md */
+    .page-china-z-visa-work-permit .hero h1 { color: #fff; }
+    .page-china-z-visa-work-permit .hero .hero-sub { color: rgba(255,255,255,.75); }
+    .page-china-z-visa-work-permit .hero .hero-byline { color: rgba(255,255,255,.6); }
+  </style>
+</Layout>
