@@ -103,6 +103,13 @@ const glossary = defineCollection({
     heroSub: z.string().optional(),
     heroStats: z.array(z.object({ num: z.string(), label: z.string() })).default([]),
     heroDark: z.boolean().default(true),
+    // optional photographic hero — art-directed crops (wide=desktop, tall=mobile),
+    // duotone-toned + scrim applied by the Hero component. Local /img/ assets.
+    heroImage: z.object({
+      wide: z.string(),
+      tall: z.string(),
+      alt: z.string(),
+    }).optional(),
     bylineDate: z.string(),            // e.g. "June 2026"
     // --- body ---
     // label = descriptive (on-page TOC + footer); nav = short one/two-word

@@ -3,6 +3,11 @@ interface Stat {
   num: string;
   label: string;
 }
+interface HeroImage {
+  wide: string;
+  tall: string;
+  alt: string;
+}
 interface Props {
   badge?: string;
   title: string;
@@ -11,11 +16,21 @@ interface Props {
   dark?: boolean;
   stats?: Stat[];
   showCta?: boolean;
+  image?: HeroImage;
 }
-const { badge, title, sub, byline, dark = true, stats = [], showCta = true } = Astro.props;
+const { badge, title, sub, byline, dark = true, stats = [], showCta = true, image } = Astro.props;
 ---
 
-<section class:list={['hero', { 'hero--dark': dark }]}>
+<section class:list={['hero', { 'hero--dark': dark, 'hero--photo': !!image }]}>
+  {image && (
+    <>
+      <picture class="hero-photo">
+        <source media="(max-width: 900px)" srcset={image.tall} />
+        <img src={image.wide} alt={image.alt} fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="hero-scrim"></div>
+    </>
+  )}
   <div class="container">
     {badge && (
       <span class="hero-badge"><span class="hero-badge-dot"></span>{badge}</span>
@@ -45,6 +60,6 @@ const { badge, title, sub, byline, dark = true, stats = [], showCta = true } = A
 <style>
   /* Re-assert hero text colors against Astro scoping specificity (see site CLAUDE.md). */
   .hero h1 { color: #fff; }
-  .hero .btn-primary { color: #fff; }
+  .hero .btn-primary { color: var(--color-ink); }
   .hero .btn-outline { color: #fff; }
 </style>

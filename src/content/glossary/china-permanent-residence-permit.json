@@ -8,6 +8,7 @@
   "h1": "China Permanent Residence Permit",
   "heroSub": "What it is, who qualifies across the four routes, how to apply, and how it differs from Chinese citizenship.",
   "heroDark": true,
+  "heroImage": { "wide": "/img/hero-pr-wide.jpg", "tall": "/img/hero-pr-tall.jpg", "alt": "A lakeside pavilion in Beihai Park with the modern Beijing skyline beyond" },
   "bylineDate": "June 2026",
   "factcheck": "passed",
   "cjgeoArtifact": "migrated from src/pages/china-permanent-residence-permit.astro (GEO experiment #1, shipped 2026-06-01)",

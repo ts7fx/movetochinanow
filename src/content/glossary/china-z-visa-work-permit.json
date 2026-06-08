@@ -8,6 +8,7 @@
   "h1": "China Z Visa & Foreigner's Work Permit",
   "heroSub": "What the Z visa and Foreigner's Work Permit are, who qualifies across the A/B/C tiers, how to apply across each authority, and what they let you do in China.",
   "heroDark": true,
+  "heroImage": { "wide": "/img/hero-zvisa-wide.jpg", "tall": "/img/hero-zvisa-tall.jpg", "alt": "The Shanghai Pudong skyline across the Huangpu River" },
   "bylineDate": "June 2026",
   "factcheck": "passed",
   "cjgeoArtifact": "migrated from src/pages/china-z-visa-work-permit.astro (GEO experiment #2, shipped 2026-06-04)",

@@ -32,6 +32,7 @@
     }
   ],
   "heroDark": true,
+  "heroImage": { "wide": "/img/hero-citizenship-wide.jpg", "tall": "/img/hero-citizenship-tall.jpg", "alt": "The Hall of Supreme Harmony, Forbidden City, Beijing" },
   "bylineDate": "June 2026",
   "tocLinks": [
     {
