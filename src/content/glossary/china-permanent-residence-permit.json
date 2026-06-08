@@ -1,0 +1,72 @@
+{
+  "title": "China Permanent Residence Permit — Definition, Eligibility & How to Apply",
+  "description": "What a China permanent residence permit (the 'China green card' / Five-Star Card) is, who qualifies across the four routes, how to apply, and how it differs from citizenship.",
+  "canonical": "https://movetochinanow.com/china-permanent-residence-permit/",
+  "entity": "China Permanent Residence Permit",
+  "definition": "The official document that lets a foreign national live and work in China indefinitely without renewing a visa. Issued under the Ministry of Public Security's permanent-residence rules and approved by the National Immigration Administration (NIA). Valid 10 years (5 for minors), renewable; it grants long-term residency but not Chinese citizenship.",
+  "alternateNames": ["China Green Card", "Five-Star Card", "Foreigner's Permanent Residence ID Card"],
+  "h1": "China Permanent Residence Permit",
+  "heroSub": "What it is, who qualifies across the four routes, how to apply, and how it differs from Chinese citizenship.",
+  "heroDark": true,
+  "bylineDate": "June 2026",
+  "factcheck": "passed",
+  "cjgeoArtifact": "migrated from src/pages/china-permanent-residence-permit.astro (GEO experiment #1, shipped 2026-06-01)",
+  "tocLinks": [
+    { "label": "What it is", "nav": "Overview", "href": "#what-is" },
+    { "label": "Relevance", "nav": "Relevance", "href": "#relevance" },
+    { "label": "Who qualifies", "nav": "Eligibility", "href": "#eligibility" },
+    { "label": "How to apply", "nav": "Apply", "href": "#apply" },
+    { "label": "Benefits", "nav": "Benefits", "href": "#benefits" },
+    { "label": "PR vs. citizenship", "nav": "vs. Citizen", "href": "#pr-vs-citizenship" }
+  ],
+  "sections": [
+    {
+      "id": "what-is",
+      "title": "What is a China permanent residence permit?",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>A <strong>China permanent residence permit</strong> &mdash; commonly called the <strong>&ldquo;China green card&rdquo;</strong> or <strong>Five-Star Card</strong>, and formally the <em>Foreigner's Permanent Residence ID Card</em> (外国人永久居留身份证) &mdash; is the official document that lets a foreign national live and work in China indefinitely without renewing a visa. It is issued under the Ministry of Public Security's permanent-residence rules and approved by the <strong>National Immigration Administration (NIA)</strong>. The card is valid for 10 years (5 years for applicants under 18) and renewable, and it grants residency rights close to those of Chinese citizens &mdash; but it does <strong>not</strong> confer citizenship.</p>" }
+      ]
+    },
+    {
+      "id": "relevance",
+      "title": "Relevance in China",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>Permanent residence is the highest immigration status a foreigner can hold in China without naturalizing. It removes the recurring visa-and-work-permit cycle that most expats live under, and it is the status China uses to retain senior professionals, established investors, recognized specialists, and the foreign spouses of its citizens. There is no separate &ldquo;green card&rdquo; document outside this permit &mdash; the terms all refer to the same card.</p>" }
+      ]
+    },
+    {
+      "id": "eligibility",
+      "title": "Who is eligible",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>Permanent residence is granted under four categories defined by Ministry of Public Security Order No. 74. Exact thresholds are set city by city, not as one national figure.</p><ul><li><strong>Employment-Based</strong> &mdash; for foreigners in senior roles at Chinese enterprises, public institutions, or research bodies: typically 4 consecutive years of employment, residence in China at least 9 months in 3 of those 4 years, a salary at or above the threshold your city tier sets, and a clean 3-year individual income tax record.</li><li><strong>Investment-Based</strong> &mdash; for foreigners with stable, sustained capital invested in a mainland Chinese enterprise: 3 years of good-standing tax records and at least 3 months of residence per year. Minimum capital varies by region; development and free-trade zones may apply lower thresholds.</li><li><strong>Special Contributions</strong> &mdash; for foreigners recognized at national or provincial level (senior specialists, researchers, award holders), supported by an endorsement from a sponsoring institution. Assessed case by case.</li><li><strong>Family Reunion (Spouse)</strong> &mdash; for foreigners married to a Chinese citizen for at least 5 years, with 5 consecutive years of residence in China (9+ months each year) and stable income and housing. See our <a href=\"/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/\">spouse-route guide</a> for the full requirements.</li></ul>" }
+      ]
+    },
+    {
+      "id": "apply",
+      "title": "How to apply",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>Once you meet your route's qualifying years, every applicant follows the same path:</p><ol><li><strong>Confirm your route</strong> and check your documents against the criteria your city applies.</li><li><strong>Authenticate documents</strong> &mdash; apostille (or consular legalization for non-Hague countries) and certified Simplified Chinese translations; foreign documents are usually authenticated within 6 months of filing.</li><li><strong>Complete the health examination</strong> at a Chinese designated medical institution (PSB-listed facilities only; results valid 12 months).</li><li><strong>Submit in person</strong> to the Entry-Exit Administration of your local Public Security Bureau (PSB).</li><li><strong>Review and decision</strong> &mdash; local PSB investigation (up to 3 months) plus inspection-authority review (up to 2 months), with final approval by the National Immigration Administration. A decision is made within six months of acceptance.</li><li><strong>Collect the card</strong> &mdash; the 10-year Permanent Residence Card (minors under 18 receive 5-year cards).</li></ol><p>Government fees are CNY 1,800 (CNY 1,500 application + CNY 300 card issuance), paid to the PSB at submission; verify the current schedule locally. Total out-of-pocket costs &mdash; authentication, translation, the medical exam, and notarization &mdash; typically run CNY 5,000&ndash;15,000 without consultancy support.</p>" }
+      ]
+    },
+    {
+      "id": "benefits",
+      "title": "Benefits",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<ul><li>Live and work in China indefinitely with no visa or work-permit renewals.</li><li>Enter and exit China freely on the permanent residence card.</li><li>Use the card as standalone legal ID for banking, education, healthcare, property, and social insurance.</li><li>A path to sponsor eligible family members under the family-reunion category.</li></ul>" }
+      ]
+    },
+    {
+      "id": "pr-vs-citizenship",
+      "title": "Permanent residence vs. citizenship",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>Permanent residence and citizenship are separate statuses. Permanent residence lets you stay indefinitely while keeping your original passport. Chinese citizenship requires renouncing your current nationality &mdash; China does not allow dual citizenship &mdash; and is granted at the discretion of the authorities. Most foreign permanent residents hold the card indefinitely rather than naturalize.</p>" }
+      ]
+    }
+  ]
+}
