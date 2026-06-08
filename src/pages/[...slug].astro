@@ -66,13 +66,18 @@ const schemaGraph = {
 };
 
 const byline = `Reviewed by Seres Immigration's advisory team · ${d.bylineDate}`;
+
+// Header nav needs SHORT labels (the horizontal bar overflows with the
+// descriptive TOC labels). Use the per-link `nav` short label, falling back to
+// the descriptive label. The on-page TocBar + footer keep the descriptive labels.
+const headerNav = d.tocLinks.map((t) => ({ label: t.nav ?? t.label, href: t.href }));
 ---
 
 <Layout
   title={d.title}
   description={d.description}
   canonical={d.canonical}
-  navLinks={d.tocLinks}
+  navLinks={headerNav}
   footerSections={d.tocLinks}
   footerSectionsTitle="On This Page"
 >

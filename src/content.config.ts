@@ -105,7 +105,13 @@ const glossary = defineCollection({
     heroDark: z.boolean().default(true),
     bylineDate: z.string(),            // e.g. "June 2026"
     // --- body ---
-    tocLinks: z.array(z.object({ label: z.string(), href: z.string() })),
+    // label = descriptive (on-page TOC + footer); nav = short one/two-word
+    // header-nav label (the horizontal nav overflows with descriptive labels).
+    tocLinks: z.array(z.object({
+      label: z.string(),
+      href: z.string(),
+      nav: z.string().optional(),
+    })),
     sections: z.array(section),
     // --- provenance (not rendered) ---
     cjgeoArtifact: z.string().optional(), // path to the cjgeo 10-final.html this was extracted from

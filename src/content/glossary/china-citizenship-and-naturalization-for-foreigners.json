@@ -36,35 +36,43 @@
   "tocLinks": [
     {
       "label": "What it is",
-      "href": "#definition"
+      "href": "#definition",
+      "nav": "Overview"
     },
     {
       "label": "No dual citizenship",
-      "href": "#no-dual"
+      "href": "#no-dual",
+      "nav": "No dual"
     },
     {
       "label": "Who qualifies",
-      "href": "#eligibility"
+      "href": "#eligibility",
+      "nav": "Eligibility"
     },
     {
       "label": "Marriage myth",
-      "href": "#marriage"
+      "href": "#marriage",
+      "nav": "Marriage"
     },
     {
       "label": "PR vs. citizenship",
-      "href": "#pr-vs-citizenship"
+      "href": "#pr-vs-citizenship",
+      "nav": "PR vs."
     },
     {
       "label": "How to apply",
-      "href": "#how-to-apply"
+      "href": "#how-to-apply",
+      "nav": "Apply"
     },
     {
       "label": "After approval",
-      "href": "#after-approval"
+      "href": "#after-approval",
+      "nav": "Approval"
     },
     {
       "label": "FAQ",
-      "href": "#faq"
+      "href": "#faq",
+      "nav": "FAQ"
     }
   ],
   "sections": [
