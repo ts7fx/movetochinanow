@@ -1,0 +1,63 @@
+{
+  "title": "China Z Visa & Work Permit — Definition, Eligibility & How to Apply",
+  "description": "What a China Z visa and Foreigner's Work Permit are, who qualifies across the A/B/C tiers, how to apply across each authority, and the benefits of work-type residence in China.",
+  "canonical": "https://movetochinanow.com/china-z-visa-work-permit/",
+  "entity": "China Z Visa",
+  "definition": "The China Z visa is the work visa issued by a Chinese embassy or consulate abroad to foreign nationals taking up employment in China. It is the entry component of a three-part authorization completed by the Foreigner's Work Permit (administered by the State Administration of Foreign Experts Affairs with the Ministry of Human Resources and Social Security) and a work-type residence permit issued by the local Public Security Bureau Exit-Entry Administration under the National Immigration Administration (NIA). A Z visa alone does not authorize work or long-term stay.",
+  "alternateNames": ["China Work Visa", "Foreigner's Work Permit"],
+  "h1": "China Z Visa & Foreigner's Work Permit",
+  "heroSub": "What the Z visa and Foreigner's Work Permit are, who qualifies across the A/B/C tiers, how to apply across each authority, and what they let you do in China.",
+  "heroDark": true,
+  "bylineDate": "June 2026",
+  "factcheck": "passed",
+  "cjgeoArtifact": "migrated from src/pages/china-z-visa-work-permit.astro (GEO experiment #2, shipped 2026-06-04)",
+  "tocLinks": [
+    { "label": "What it is", "nav": "Overview", "href": "#what-is" },
+    { "label": "Relevance", "nav": "Relevance", "href": "#relevance" },
+    { "label": "Who qualifies", "nav": "Eligibility", "href": "#eligibility" },
+    { "label": "How to apply", "nav": "Apply", "href": "#apply" },
+    { "label": "Benefits", "nav": "Benefits", "href": "#benefits" }
+  ],
+  "sections": [
+    {
+      "id": "what-is",
+      "title": "What is a China Z visa & Foreigner's Work Permit?",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>The <strong>China Z visa</strong> is the work visa issued to foreign nationals who intend to take up employment in China. It is the entry component of a three-part authorization: a Chinese embassy or consulate abroad issues the Z visa (against a <strong>Notification Letter of Foreigner's Work Permit</strong> pre-approved through the State Administration of Foreign Experts Affairs (SAFEA) and the Ministry of Human Resources and Social Security (MOHRSS)); after entry the worker obtains the Foreigner's Work Permit card; and the local Public Security Bureau (PSB) Exit-Entry Administration, under the <strong>National Immigration Administration (NIA)</strong>, converts the visa into a work-type residence permit. A Z visa alone does <strong>not</strong> authorize work or long-term stay &mdash; the work permit and residence permit together complete the legal right to work and live in China.</p>" }
+      ]
+    },
+    {
+      "id": "relevance",
+      "title": "Relevance in China",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>The Z visa and Foreigner's Work Permit are the only lawful route to salaried employment for most foreigners hired by a China-registered company, and the Z visa is the most common visa type used by foreigners working in China. A few obligations define how it works in practice:</p><ul><li><strong>It is an entry visa, not a work license.</strong> The Z visa gets you into China; the Foreigner's Work Permit card and the residence permit are what actually authorize employment and residence.</li><li><strong>A unified work-permit system has applied since 1 April 2017</strong>, replacing the older Alien Employment Permit and Foreign Expert Certificate with a single Foreigner's Work Permit administered by SAFEA together with MOHRSS, the Ministry of Foreign Affairs and the Ministry of Public Security.</li><li><strong>Residence-permit conversion is mandatory and time-boxed.</strong> Z visa holders (except those working 30 days or fewer) must apply for a work-type residence permit within 30 days of entry.</li><li><strong>Police registration depends on where you stay.</strong> If you stay in a hotel, it registers you with the police at check-in; in non-hotel lodging (a rented home, or staying with friends), you or your host must register your address with the local PSB within 24 hours of arrival (Exit and Entry Administration Law, Article 39).</li><li><strong>The employer drives the application.</strong> The hiring entity initiates the Foreigner's Work Permit application and obtains the Notification Letter that the visa stage depends on.</li></ul>" }
+      ]
+    },
+    {
+      "id": "eligibility",
+      "title": "Who is eligible",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>Eligibility is decided through the Foreigner's Work Permit, which classifies applicants into three tiers (A, B, C) under SAFEA's point-scored evaluation. General baseline requirements are an age of at least 18 and normally not over 60, a clean criminal record with a police clearance certificate, and a genuine employment offer from a China-registered entity.</p><ul><li><strong>Category A &mdash; high-end talent (85+ points).</strong> Scientists, technological and specialized experts, international entrepreneurs and other urgently needed high-end talents. No fixed age, education or work-experience restrictions, and eligible for a &ldquo;green channel&rdquo; with faster processing.</li><li><strong>Category B &mdash; professional talent (60 to below 85 points).</strong> Foreign professionals with skills China needs; typically a bachelor's degree or equivalent as a minimum, at least 2 years of relevant post-graduation experience, and under 60. This tier covers the largest share of foreign workers in China.</li><li><strong>Category C &mdash; other workers (below 60 points).</strong> Foreigners meeting labor-market needs and national policy, including temporary, seasonal and lower-skilled workers; subject to quota controls, longer processing and shorter permit validity.</li></ul><p>The tier a worker falls into also shapes the duration of the residence permit issued later: up to 5 years for high-level talents, urgently needed professionals and investors; up to 2 years for workers at registered entities with a good track record; and up to 1 year for other personnel.</p>" }
+      ]
+    },
+    {
+      "id": "apply",
+      "title": "How to apply",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<p>The sequence runs across several authorities, each owning one step. Begin only once you have a confirmed employer in China.</p><ol><li><strong>Work Permit Notification Letter (SAFEA / MOHRSS, before you travel).</strong> The employer applies online through the Service System for Foreigners Working in China (fwp.safea.gov.cn). After preliminary review, SAFEA/MOHRSS decide within about 10&ndash;15 working days (5 working days for Category A talents) and issue the Notification Letter &mdash; a free, pre-approval document you present at the visa stage.</li><li><strong>Z visa application (Chinese embassy or consulate abroad).</strong> With the Notification Letter of Foreigner's Work Permit &mdash; the work-authorization document (an Alien Employment License or another enumerated approval document where applicable) &mdash; plus your passport, the completed application form and a photo, apply for the Z visa at the embassy, consulate or other institution entrusted by China's Ministry of Foreign Affairs. The number of entries and validity are set by the issuing post on a case-by-case basis (Z visas are commonly issued single-entry).</li><li><strong>Entry and police registration.</strong> On arrival, if you stay in a hotel it registers you at check-in; in non-hotel lodging, register your residential address with the local PSB within 24 hours.</li><li><strong>Foreigner's Work Permit card (MOHRSS / SAFEA, in-country).</strong> Complete the medical examination if required and submit the post-arrival work-permit application; the Work Permit card carries a unique ID number that stays with you through renewals or employer changes. Workers staying more than 90 days must apply for the work permit within 30 days of entry.</li><li><strong>Work-type residence permit (PSB Exit-Entry Administration / NIA).</strong> Within 30 days of entry, file at the PSB Exit-Entry Administration with your passport, application form, photo, work permit and employer certification. When the office accepts the application it issues a receipt of acceptance and reaches a decision within that period &mdash; up to about 15 working days nationally (7 in Beijing); your stay during processing normally rests on your still-valid visa rather than on the receipt itself. Official fees run CNY 400 (up to 1 year), CNY 800 (1&ndash;3 years) and CNY 1,000 (3&ndash;5 years); permits over 1 year require a health certificate from a county-level-or-above medical authority. Issued permits are valid from 90 days to 5 years.</li></ol>" }
+      ]
+    },
+    {
+      "id": "benefits",
+      "title": "Benefits",
+      "variant": "default",
+      "blocks": [
+        { "type": "prose", "html": "<ul><li><strong>Lawful, full-time employment</strong> with a China-registered employer once the work permit and residence permit are in hand.</li><li><strong>Multiple-entry residence in China</strong> on the work-type residence permit, without re-applying for a visa on each trip.</li><li><strong>A stable identity record</strong> &mdash; the Foreigner's Work Permit card keeps the same ID number across renewals and changes of employer.</li><li><strong>A pathway to longer stays for stronger profiles</strong> &mdash; Category A and other high-level talents can receive residence permits of up to 5 years.</li><li><strong>A foundation for family arrangements and, over time, for permanent-residence routes</strong> &mdash; a documented work and tax history in China supports a later application for the <a href=\"/china-permanent-residence-permit/\">China permanent residence permit</a>.</li></ul>" }
+      ]
+    }
+  ]
+}
