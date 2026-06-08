@@ -1,0 +1,312 @@
+{
+  "title": "Chinese Citizenship & Naturalization for Foreigners: 2026 Requirements",
+  "description": "Can foreigners naturalize as Chinese citizens? The Nationality Law (1980) criteria, the no-dual-citizenship rule, and why citizenship differs from permanent residence — and why marriage grants PR, not citizenship.",
+  "canonical": "https://movetochinanow.com/china-citizenship-and-naturalization-for-foreigners/",
+  "entity": "Chinese Citizenship & Naturalization",
+  "definition": "Chinese citizenship for foreigners is governed by the Nationality Law of the People’s Republic of China (1980), under which a foreign national may be naturalized only upon the approval of the Ministry of Public Security (MPS) — not the National Immigration Administration. China does not recognize dual nationality, so an approved applicant must renounce their original citizenship; in practice, naturalization of foreigners is rare and granted entirely at the MPS’s discretion.",
+  "alternateNames": [
+    "Chinese naturalization",
+    "Chinese citizenship by naturalization",
+    "becoming a Chinese citizen",
+    "Chinese passport for foreigners"
+  ],
+  "h1": "Chinese Citizenship for Foreigners: 2026 Naturalization Guide",
+  "heroBadge": "China Immigration · Citizenship",
+  "heroSub": "Whether a foreigner can become a Chinese citizen, the three naturalization criteria under the Nationality Law (1980), the no-dual-citizenship rule, and how citizenship differs from permanent residence.",
+  "heroStats": [
+    {
+      "num": "1980",
+      "label": "Nationality Law in force"
+    },
+    {
+      "num": "3",
+      "label": "Art. 7 criteria (meet one)"
+    },
+    {
+      "num": "No",
+      "label": "Dual nationality (Art. 3)"
+    },
+    {
+      "num": "MPS",
+      "label": "Approving authority"
+    }
+  ],
+  "heroDark": true,
+  "bylineDate": "June 2026",
+  "tocLinks": [
+    {
+      "label": "What it is",
+      "href": "#definition"
+    },
+    {
+      "label": "No dual citizenship",
+      "href": "#no-dual"
+    },
+    {
+      "label": "Who qualifies",
+      "href": "#eligibility"
+    },
+    {
+      "label": "Marriage myth",
+      "href": "#marriage"
+    },
+    {
+      "label": "PR vs. citizenship",
+      "href": "#pr-vs-citizenship"
+    },
+    {
+      "label": "How to apply",
+      "href": "#how-to-apply"
+    },
+    {
+      "label": "After approval",
+      "href": "#after-approval"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    }
+  ],
+  "sections": [
+    {
+      "id": "definition",
+      "title": "What is Chinese naturalization / citizenship for foreigners?",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<p>Chinese citizenship for foreigners is governed by the <strong>Nationality Law of the People’s Republic of China (1980)</strong>, and naturalization applications are examined and approved by the <strong>Ministry of Public Security (MPS / 公安部)</strong> under Article 16 of that law — not the National Immigration Administration. China does not allow dual nationality under any circumstances, so a foreigner who is approved for naturalization must renounce their original citizenship before acquiring Chinese nationality. Naturalization of foreigners is rare in practice and granted entirely at the discretion of the MPS; meeting an eligibility criterion does not entitle an applicant to citizenship.</p>"
+        }
+      ]
+    },
+    {
+      "id": "no-dual",
+      "title": "The no-dual-citizenship rule",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<p>China’s position on dual nationality is unambiguous and encoded directly in the Nationality Law.</p> <p><strong>Article 3</strong> states: <em>“The People’s Republic of China does not recognize dual nationality for any Chinese national.”</em> This applies to Chinese nationals by birth and to anyone who naturalizes.</p> <p><strong>Article 8</strong> makes the consequence explicit for foreigners: a person whose naturalization application is approved <em>shall not retain foreign nationality</em>. There is no partial or conditional form of Chinese citizenship that permits holding a second passport. The choice is absolute.</p>"
+        },
+        {
+          "type": "callout",
+          "tone": "warn",
+          "title": "Renunciation consequence (Art. 8)",
+          "html": "<p>If your application is approved, you must formally renounce your original citizenship. You will lose the right to travel on your previous passport, consular protection from your former country, and any citizenship-linked rights (property ownership in some jurisdictions, benefits, voting). This is irreversible. For most Western nationals, this is a significant personal cost that makes permanent residence — where you keep your passport — the far more practical option.</p>"
+        },
+        {
+          "type": "prose",
+          "html": "<p>The no-dual-citizenship rule is not a bureaucratic technicality. It is the single most material factor for any foreigner considering naturalization and should be weighed carefully before any application is pursued.</p>"
+        }
+      ]
+    },
+    {
+      "id": "eligibility",
+      "title": "Who can apply for Chinese naturalization",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<p>Article 7 of the Nationality Law sets out the eligibility criteria. The three conditions are <strong>alternatives</strong>: an applicant need only satisfy <em>one</em> of them to have a basis to apply. Meeting a condition does not guarantee approval; the MPS decides each application on a discretionary basis.</p> <p><strong>Article 7 (full text):</strong> <em>“Foreign nationals or stateless persons who are willing to abide by China’s Constitution and other laws and who meet one of the following conditions may be naturalized upon approval of their applications…”</em></p>"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "label": "Article 7(1)",
+              "note": "<p><strong>Near relatives of Chinese nationals.</strong> The applicant has a close family relationship with a Chinese citizen — most commonly a spouse, but also a parent, child, or sibling. The relationship must be genuine and documentable.</p>"
+            },
+            {
+              "label": "Article 7(2)",
+              "note": "<p><strong>Settled in China.</strong> The applicant is settled in China, which in practice means holding lawful established settled status — typically permanent residence. Obtaining PR is usually the prerequisite step for this condition. No statutory number of years is specified in the law.</p>"
+            },
+            {
+              "label": "Article 7(3)",
+              "note": "<p><strong>Other legitimate reasons.</strong> A residual category allowing the MPS to consider cases not fitting neatly into conditions 1 or 2. The law does not enumerate what qualifies, leaving it entirely to MPS discretion.</p>"
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "info",
+          "title": "Discretionary approval",
+          "html": "<p>Article 7 uses the phrase “may be naturalized upon approval.” Meeting a condition opens the door to apply; it does not create a right to citizenship. The MPS evaluates each case individually. Naturalization of foreigners without Chinese descent is rare in practice. No approval rate or percentage should be assumed.</p>"
+        }
+      ]
+    },
+    {
+      "id": "marriage",
+      "title": "Naturalization through marriage — what to expect",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<p>This is one of the most common misconceptions in China immigration: that marrying a Chinese citizen creates a fast path to a Chinese passport. It does not.</p> <h3>What marriage actually does</h3> <p>Marriage to a Chinese citizen makes the foreign spouse a <strong>“near relative of a Chinese national”</strong> under Article 7(1) — which is a <em>possible basis to apply</em> for naturalization, not an entitlement to it. The MPS still decides whether to approve the application, and approval is discretionary and rare.</p> <h3>The “5-year marriage rule” is for permanent residence, not citizenship</h3> <p>The widely cited five-year marriage requirement belongs to the <strong>permanent residence</strong> pathway for a foreign spouse of a Chinese citizen — not to naturalization. Under the spouse PR route, an applicant must generally be married to a Chinese citizen for a qualifying period and have maintained lawful residence in China before becoming eligible to apply for a <a href=\"/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/\">permanent residence permit as the foreign spouse of a Chinese citizen</a>. That is a PR application, processed under a completely different set of rules, resulting in a permanent residence card — not Chinese citizenship or a Chinese passport.</p>"
+        },
+        {
+          "type": "callout",
+          "tone": "warn",
+          "title": "Common misconception",
+          "html": "<p>Marriage to a Chinese citizen does <strong>not</strong> grant automatic citizenship, a citizenship timeline, or any right to a Chinese passport. The correct instrument for most foreign spouses who want long-term settled status is the <a href=\"/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/\">foreign-spouse permanent residence permit</a>, which allows indefinite residence while keeping your original nationality and passport.</p>"
+        }
+      ]
+    },
+    {
+      "id": "pr-vs-citizenship",
+      "title": "Permanent residence vs. citizenship",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<p>For the vast majority of foreigners who want to live in China indefinitely, <a href=\"/china-permanent-residence-permit/\">permanent residence</a> is the realistic and practical status. The table below sets out the key differences.</p>"
+        },
+        {
+          "type": "compare",
+          "headers": [
+            "Factor",
+            "Permanent Residence (PR)",
+            "Citizenship (Naturalization)"
+          ],
+          "rows": [
+            [
+              "Your original passport",
+              "Keep it — you retain your original nationality and can renew and travel on your current passport",
+              "Must renounce — Art. 8 requires surrendering your foreign nationality upon approval"
+            ],
+            [
+              "Right to reside",
+              "Indefinite residence in China on a renewable permanent residence card; no annual visa renewal required",
+              "Full Chinese citizenship; rights and duties of a Chinese national apply"
+            ],
+            [
+              "Governing instrument",
+              "MPS permanent-residence rules and State Council regulations; applications processed via the National Immigration Administration (NIA)",
+              "Nationality Law of the PRC (1980); applications approved by the Ministry of Public Security (MPS) under Art. 16"
+            ],
+            [
+              "Deciding authority",
+              "National Immigration Administration (NIA) / local PSB Exit-Entry Administration",
+              "Ministry of Public Security (MPS) — final approval sits with the MPS, not the NIA"
+            ],
+            [
+              "Availability",
+              "More accessible — multiple eligibility routes including spouse, investor, high-skill, and talent categories",
+              "Rare in practice — entirely discretionary; naturalization of foreigners without Chinese descent is uncommon"
+            ],
+            [
+              "Dual status",
+              "You hold PR status and your original citizenship simultaneously",
+              "China does not permit dual nationality (Art. 3); you hold one nationality only"
+            ]
+          ],
+          "caption": "Permanent residence keeps your passport; citizenship (naturalization) requires renouncing it."
+        },
+        {
+          "type": "callout",
+          "tone": "key",
+          "title": "Practical recommendation",
+          "html": "<p>For almost everyone who wants to live in China permanently, <a href=\"/china-permanent-residence-permit/\">permanent residence</a> is the realistic target. Citizenship involves renouncing your current passport and is granted entirely at the MPS’s discretion.</p>"
+        }
+      ]
+    },
+    {
+      "id": "how-to-apply",
+      "title": "How to apply for naturalization",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<p>The Nationality Law sets out the procedural framework in Articles 15 and 16. There is no statutory processing time and no fee prescribed by the law.</p>"
+        },
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Establish a basis to apply",
+              "html": "<p>Confirm that you meet at least one of the three Article 7 conditions: near relative of a Chinese national, settled in China (typically meaning you hold permanent residence), or other legitimate reasons. Meeting a condition is the starting point, not a guarantee of approval.</p>"
+            },
+            {
+              "title": "File with the local public security bureau (if in China)",
+              "html": "<p>Per Article 15, applications made inside China are submitted to the public security bureau of the municipality or county where the applicant resides. This is typically the Exit-Entry Administration branch of your local PSB.</p>"
+            },
+            {
+              "title": "File via a Chinese consulate or embassy (if abroad)",
+              "html": "<p>Also per Article 15, applicants residing outside China submit their applications through a Chinese diplomatic or consular office in their country of residence.</p>"
+            },
+            {
+              "title": "MPS examination and decision",
+              "html": "<p>Under Article 16, the Ministry of Public Security examines the application. The MPS has full discretionary authority to approve or decline. There is no fixed statutory timeline for this stage, and no right of appeal is specified in the law. Decisions are made case by case.</p>"
+            },
+            {
+              "title": "On approval: renounce your original nationality",
+              "html": "<p>If the MPS approves the application, the applicant must renounce their foreign nationality in accordance with Article 8. This is a condition of approval, not an optional step. The precise mechanics of renunciation depend on your country of origin.</p>"
+            },
+            {
+              "title": "Receive nationality certificate and register household (hukou)",
+              "html": "<p>The MPS issues a nationality certificate confirming Chinese nationality (Article 16). The naturalized citizen then registers in the household registration (hukou) system and from that point holds the rights and duties of a Chinese national.</p>"
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "info",
+          "title": "No statutory processing time or fee",
+          "html": "<p>The Nationality Law prescribes no timeline for MPS review and no fee schedule for naturalization applications. Any figure you encounter elsewhere is not derived from the law. Processing is decided case by case at the full discretion of the MPS.</p>"
+        }
+      ]
+    },
+    {
+      "id": "after-approval",
+      "title": "What happens if you’re approved",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "prose",
+          "html": "<p>Approval for naturalization triggers a sequence of legally required steps and a fundamental change in legal status.</p> <ul> <li><strong>Renunciation of original nationality (Article 8):</strong> As a condition of approval, you must formally relinquish your foreign citizenship. You will no longer hold or be entitled to renew your previous passport.</li> <li><strong>Nationality certificate:</strong> The Ministry of Public Security issues a certificate confirming your Chinese nationality. This is the foundational document establishing your new legal identity.</li> <li><strong>Hukou (household) registration:</strong> You register in China’s household registration system. Hukou registration has practical consequences for access to social services, education, and other entitlements tied to residence.</li> <li><strong>Rights and duties of a Chinese national:</strong> You hold the rights and obligations of a Chinese citizen under Chinese law generally. The scope of specific political rights and duties is a matter of constitutional and statutory law that applies to all Chinese nationals.</li> <li><strong>No path back:</strong> China’s no-dual-nationality rule means there is no mechanism to re-acquire your original citizenship automatically. Whether re-naturalization in your country of origin is possible depends entirely on that country’s own law.</li> </ul>"
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "variant": "default",
+      "blocks": [
+        {
+          "type": "faq",
+          "items": [
+            {
+              "q": "Can a foreigner become a Chinese citizen?",
+              "a": "<p>Yes, but it is rare and entirely discretionary. Under Article 7 of the <strong>Nationality Law of the PRC (1980)</strong>, a foreign national or stateless person may apply for naturalization if they are a near relative of a Chinese national, are settled in China, or have other legitimate reasons. Applications are approved by the <strong>Ministry of Public Security (MPS)</strong>. Meeting an eligibility condition does not entitle the applicant to citizenship; the MPS decides each case individually. Naturalization of foreigners without Chinese descent is uncommon in practice.</p>"
+            },
+            {
+              "q": "Does China allow dual citizenship?",
+              "a": "<p>No. <strong>Article 3</strong> of the Nationality Law states: “The People’s Republic of China does not recognize dual nationality for any Chinese national.” This applies to Chinese nationals by birth and to anyone who naturalizes. <strong>Article 8</strong> specifies that a foreigner whose naturalization is approved <em>shall not retain foreign nationality</em>. There is no exception, exemption, or partial arrangement. Naturalization requires full renunciation of your original citizenship.</p>"
+            },
+            {
+              "q": "Can I get Chinese citizenship by marrying a Chinese citizen?",
+              "a": "<p>No. Marriage to a Chinese citizen does not grant automatic citizenship or create any right to naturalization. It makes you a “near relative of a Chinese national” under Article 7(1), which is a possible <em>basis to apply</em>, but approval remains entirely at the MPS’s discretion and is rare.</p> <p>The “5-year marriage rule” that circulates online refers to the <strong>permanent residence</strong> pathway for a foreign spouse of a Chinese citizen — not to naturalization. If your goal is long-term residence without renouncing your passport, the <a href=\"/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/\">foreign-spouse permanent residence permit</a> is the correct and far more accessible instrument to pursue.</p>"
+            },
+            {
+              "q": "What is the difference between Chinese permanent residence and citizenship?",
+              "a": "<p>The fundamental difference is your original passport. With <a href=\"/china-permanent-residence-permit/\">permanent residence</a>, you keep your original nationality and passport while living indefinitely in China on a renewable PR card. Applications are processed through the National Immigration Administration (NIA). Citizenship, by contrast, requires renouncing your original nationality (Art. 8), is approved by the Ministry of Public Security under the 1980 Nationality Law, and is rare and discretionary. For almost everyone who wants to settle in China long-term, permanent residence is the realistic and appropriate status.</p>"
+            },
+            {
+              "q": "Which authority approves Chinese naturalization?",
+              "a": "<p>The <strong>Ministry of Public Security (MPS)</strong>, under <strong>Article 16</strong> of the Nationality Law of the PRC (1980). Applications are filed locally with the public security bureau of the city or county where the applicant resides (or abroad via a Chinese consulate), but final examination and approval authority rests with the MPS. The National Immigration Administration (NIA) handles visas and permanent residence — it is not the approving body for citizenship.</p>"
+            },
+            {
+              "q": "How long does Chinese naturalization take?",
+              "a": "<p>The Nationality Law of the PRC (1980) prescribes no statutory processing timeline for naturalization. The MPS reviews and decides each application on a discretionary, case-by-case basis. Any specific duration cited elsewhere is not derived from the law and should not be relied upon.</p>"
+            },
+            {
+              "q": "Do I need permanent residence before applying for Chinese citizenship?",
+              "a": "<p>Not as a strict legal requirement, but in practice, the Article 7(2) condition — “settled in China” — is generally understood to require established settled status, which typically means holding <a href=\"/china-permanent-residence-permit/\">permanent residence</a>. If you are applying under Article 7(1) (near relative of a Chinese national) or 7(3) (other legitimate reasons), permanent residence is not an explicit prerequisite, though settled, lawful long-term residence would be a relevant factor. The law sets no statutory number of years of residence or PR as a prerequisite for naturalization.</p>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cjgeoArtifact": "sites/movetochinanow/cjgeo-output/2026-06-08/china-citizenship-and-naturalization-for-foreigners-cjgeo-raw.html",
+  "factcheck": "pending"
+}
