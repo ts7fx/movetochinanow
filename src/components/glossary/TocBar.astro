@@ -1,0 +1,13 @@
+---
+interface Props {
+  links: { label: string; href: string }[];
+}
+const { links } = Astro.props;
+---
+
+<div class="toc-bar">
+  <div class="container toc-inner">
+    <span class="toc-label">On this page</span>
+    {links.map((l) => <a class="toc-link" href={l.href}>{l.label}</a>)}
+  </div>
+</div>

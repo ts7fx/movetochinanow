@@ -1,0 +1,50 @@
+---
+interface Stat {
+  num: string;
+  label: string;
+}
+interface Props {
+  badge?: string;
+  title: string;
+  sub?: string;
+  byline?: string;
+  dark?: boolean;
+  stats?: Stat[];
+  showCta?: boolean;
+}
+const { badge, title, sub, byline, dark = true, stats = [], showCta = true } = Astro.props;
+---
+
+<section class:list={['hero', { 'hero--dark': dark }]}>
+  <div class="container">
+    {badge && (
+      <span class="hero-badge"><span class="hero-badge-dot"></span>{badge}</span>
+    )}
+    <h1 class="text-balance">{title}</h1>
+    {sub && <p class="hero-sub">{sub}</p>}
+    {showCta && (
+      <div class="hero-actions">
+        <a href="/consultation" class="btn btn-primary btn-lg">Book Free Consultation</a>
+        <a href="/consultation" class="btn btn-outline btn-lg">Check Your Eligibility</a>
+      </div>
+    )}
+    {stats.length > 0 && (
+      <div class="hero-stats">
+        {stats.map((s) => (
+          <div>
+            <span class="hero-stat-num">{s.num}</span>
+            <span class="hero-stat-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    )}
+    {byline && <p class="hero-byline">{byline}</p>}
+  </div>
+</section>
+
+<style>
+  /* Re-assert hero text colors against Astro scoping specificity (see site CLAUDE.md). */
+  .hero h1 { color: #fff; }
+  .hero .btn-primary { color: #fff; }
+  .hero .btn-outline { color: #fff; }
+</style>

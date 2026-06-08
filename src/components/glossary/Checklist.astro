@@ -1,0 +1,44 @@
+---
+interface Props {
+  title?: string;
+  items: string[];
+}
+const { title, items } = Astro.props;
+---
+
+{title && <p class="checklist-title">{title}</p>}
+<ul class="checklist" role="list">
+  {items.map((it) => <li set:html={it} />)}
+</ul>
+
+<style>
+  .checklist-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin: 24px 0 10px;
+  }
+  .checklist { list-style: none; padding-left: 0; margin: 16px 0; }
+  .checklist li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 11px;
+    color: var(--color-text-mid);
+  }
+  .checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-white);
+    background: var(--color-red);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

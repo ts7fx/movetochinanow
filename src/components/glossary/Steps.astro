@@ -1,0 +1,75 @@
+---
+interface Step {
+  title: string;
+  time?: string;
+  html: string;
+}
+interface Props {
+  items: Step[];
+}
+const { items } = Astro.props;
+---
+
+<ol class="steps">
+  {items.map((s) => (
+    <li class="step">
+      <div class="step-marker" aria-hidden="true"></div>
+      <div class="step-body">
+        <div class="step-head">
+          <strong class="step-title">{s.title}</strong>
+          {s.time && <span class="step-time">{s.time}</span>}
+        </div>
+        <div class="step-text" set:html={s.html} />
+      </div>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .steps { list-style: none; counter-reset: step; padding-left: 0; margin: 28px 0; }
+  .step {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    padding-bottom: 26px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 44px;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+  }
+  .step-marker {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-navy);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    z-index: 1;
+  }
+  .step-marker::before { content: counter(step); }
+  .step-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 6px; }
+  .step-title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-navy); }
+  .step-time {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-red);
+    background: #fcf3f1;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .step-text :global(p:last-child) { margin-bottom: 0; }
+</style>

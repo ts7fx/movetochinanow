@@ -1,0 +1,56 @@
+---
+interface Card {
+  label: string;
+  value?: string;
+  note?: string;
+}
+interface Props {
+  items: Card[];
+}
+const { items } = Astro.props;
+---
+
+<div class="card-grid">
+  {items.map((c) => (
+    <div class="stat-card">
+      <div class="stat-card-label">{c.label}</div>
+      {c.value && <div class="stat-card-value">{c.value}</div>}
+      {c.note && <div class="stat-card-note" set:html={c.note} />}
+    </div>
+  ))}
+</div>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .stat-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-red);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+  }
+  .stat-card-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+  }
+  .stat-card-value {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .stat-card-note { font-size: 0.88rem; color: var(--color-text-mid); }
+  .stat-card-note :global(p:last-child) { margin-bottom: 0; }
+</style>

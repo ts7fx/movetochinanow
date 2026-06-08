@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/glossary/Hero.astro';
+import TocBar from '../components/glossary/TocBar.astro';
+import Section from '../components/glossary/Section.astro';
+import BlockRenderer from '../components/glossary/BlockRenderer.astro';
+import CtaBlock from '../components/glossary/CtaBlock.astro';
+
+/*
+ * Glossary entity template — renders any entry in the `glossary` content
+ * collection at its top-level slug (e.g. /china-citizenship.../).
+ *
+ * Static .astro pages take route priority over this catch-all, so migration is
+ * incremental: move a page into the collection, delete its static .astro, and
+ * this template picks it up. See the refactor plan / seo-geo GEO-BOARD.
+ */
+export async function getStaticPaths() {
+  const entries = await getCollection('glossary');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const h1 = d.h1 ?? d.title;
+
+// FAQPage schema is assembled from every faq block across all sections.
+const faqItems = d.sections.flatMap((s) =>
+  s.blocks.filter((b) => b.type === 'faq').flatMap((b) => b.items)
+);
+
+const schemaGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://movetochinanow.com/' },
+        { '@type': 'ListItem', position: 2, name: d.entity, item: d.canonical },
+      ],
+    },
+    {
+      '@type': 'DefinedTerm',
+      '@id': d.canonical + '#term',
+      name: d.entity,
+      ...(d.alternateNames.length ? { alternateName: d.alternateNames } : {}),
+      description: d.definition,
+      inDefinedTermSet: d.canonical,
+    },
+    ...(faqItems.length
+      ? [
+          {
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
+        ]
+      : []),
+  ],
+};
+
+const byline = `Reviewed by Seres Immigration's advisory team · ${d.bylineDate}`;
+---
+
+<Layout
+  title={d.title}
+  description={d.description}
+  canonical={d.canonical}
+  navLinks={d.tocLinks}
+  footerSections={d.tocLinks}
+  footerSectionsTitle="On This Page"
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(schemaGraph)}
+  />
+
+  <article class="glossary-page">
+    <Hero
+      badge={d.heroBadge}
+      title={h1}
+      sub={d.heroSub}
+      byline={byline}
+      dark={d.heroDark}
+      stats={d.heroStats}
+    />
+    <TocBar links={d.tocLinks} />
+    {d.sections.map((s) => (
+      <Section id={s.id} label={s.label} title={s.title} variant={s.variant}>
+        {s.blocks.map((b) => <BlockRenderer block={b} />)}
+      </Section>
+    ))}
+    <CtaBlock />
+  </article>
+</Layout>

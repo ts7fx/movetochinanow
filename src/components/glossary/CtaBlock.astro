@@ -1,0 +1,29 @@
+---
+interface Props {
+  heading?: string;
+  body?: string;
+  label?: string;
+  href?: string;
+}
+const {
+  heading = 'Not sure where you stand?',
+  body = 'Seres Immigration focuses exclusively on Westerners relocating to China. Book a free 30-minute consultation to map your route and confirm your eligibility.',
+  label = 'Free Consultation',
+  href = '/consultation',
+} = Astro.props;
+---
+
+<section class="section section--navy cta-block">
+  <div class="container--narrow cta-inner">
+    <h2 class="section-title">{heading}</h2>
+    <p class="section-lead section-lead--light cta-lead">{body}</p>
+    <a href={href} class="btn btn-primary btn-lg">{label}</a>
+  </div>
+</section>
+
+<style>
+  .cta-inner { text-align: center; }
+  .cta-lead { margin-left: auto; margin-right: auto; }
+  /* Re-assert button text color against Astro scoping specificity (see site CLAUDE.md). */
+  .cta-block .btn-primary { color: var(--color-white); }
+</style>

@@ -1,0 +1,48 @@
+---
+import Callout from './Callout.astro';
+import CompareTable from './CompareTable.astro';
+import Checklist from './Checklist.astro';
+import Faq from './Faq.astro';
+import Steps from './Steps.astro';
+import CardGrid from './CardGrid.astro';
+import type { CollectionEntry } from 'astro:content';
+
+type Section = CollectionEntry<'glossary'>['data']['sections'][number];
+type Block = Section['blocks'][number];
+
+interface Props {
+  block: Block;
+}
+const { block } = Astro.props;
+---
+
+{block.type === 'prose' && <div class="prose-block" set:html={block.html} />}
+
+{block.type === 'callout' && (
+  <Callout title={block.title} tone={block.tone}>
+    <Fragment set:html={block.html} />
+  </Callout>
+)}
+
+{block.type === 'compare' && (
+  <CompareTable
+    headers={block.headers}
+    rows={block.rows}
+    highlightRow={block.highlightRow}
+    caption={block.caption}
+  />
+)}
+
+{block.type === 'checklist' && <Checklist title={block.title} items={block.items} />}
+
+{block.type === 'faq' && <Faq items={block.items} />}
+
+{block.type === 'steps' && <Steps items={block.items} />}
+
+{block.type === 'cards' && <CardGrid items={block.items} />}
+
+{block.type === 'raw' && <div class="raw-block" set:html={block.html} />}
+
+<style>
+  .prose-block { margin: 0 0 4px; }
+</style>

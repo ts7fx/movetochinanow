@@ -1,0 +1,28 @@
+---
+interface Props {
+  id?: string;
+  label?: string;
+  title?: string;
+  lead?: string;
+  variant?: 'default' | 'cream' | 'navy' | 'dark';
+  narrow?: boolean;
+}
+const { id, label, title, lead, variant = 'default', narrow = true } = Astro.props;
+const variantClass = variant === 'default' ? null : `section--${variant}`;
+const labelLightClass = variant === 'navy' || variant === 'dark' ? 'section-label--light' : null;
+const leadLightClass = variant === 'navy' || variant === 'dark' ? 'section-lead--light' : null;
+---
+
+<section class:list={['section', variantClass]}>
+  <div class:list={[narrow ? 'container--narrow' : 'container']}>
+    {label && <span class:list={['section-label', labelLightClass]}>{label}</span>}
+    {title && <h2 id={id} class="section-title">{title}</h2>}
+    {lead && <p class:list={['section-lead', leadLightClass]}>{lead}</p>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  /* Offset sticky nav (64px) + topbar when jumping to an anchored heading. */
+  .section-title[id] { scroll-margin-top: 90px; }
+</style>
