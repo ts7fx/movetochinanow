@@ -226,15 +226,18 @@ blockquote.pull cite { display: block; margin-top: 12px; font-style: normal; fon
 }
 .nav-logo-text { font-family: var(--font-serif); font-size: 1.06rem; font-weight: 600; color: var(--color-ink); line-height: 1.15; letter-spacing: -.01em; }
 .nav-logo-sub { font-family: var(--font-sans); font-size: .66rem; letter-spacing: .13em; color: var(--color-muted); text-transform: uppercase; font-weight: 500; }
-.nav-links { display: flex; align-items: center; gap: 26px; list-style: none; padding: 0; }
+.nav-links { display: flex; align-items: center; gap: 22px; list-style: none; padding: 0; }
 .nav-links li { margin: 0; }
-.nav-links a { font-size: .82rem; font-weight: 500; color: var(--color-ink-soft); text-decoration: none; letter-spacing: .01em; }
+.nav-links a { font-size: .82rem; font-weight: 500; color: var(--color-ink-soft); text-decoration: none; letter-spacing: .01em; white-space: nowrap; }
 .nav-links a:hover { color: var(--color-brass); }
+.nav-links a[aria-current="page"] { color: var(--color-brass); }
 .nav-cta { display: flex; align-items: center; gap: 12px; }
 .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--color-ink); }
 
-/* Mobile nav: toggled via [data-nav-open] attribute on .nav */
-@media (max-width: 860px) {
+/* Mobile nav: toggled via [data-nav-open] attribute on .nav.
+   Breakpoint raised to 920px so the 6-item universal guide nav only shows
+   horizontally where it comfortably fits (below that → hamburger). */
+@media (max-width: 920px) {
   .nav-links,
   .nav-cta .btn { display: none; }
   .nav-mobile-btn { display: block; }

@@ -56,6 +56,18 @@ const defaultHomeLinks: NavLink[] = [
 
 const resolvedNavLinks: NavLink[] | null = navLinks ?? (isHome ? defaultHomeLinks : null);
 
+// Universal top-nav — the SAME guide directory on every page (current page
+// highlighted). Page sections live in the toc-bar + footer, not here. When the
+// guide list outgrows a horizontal bar, switch to grouped dropdown menus.
+const guideNav: NavLink[] = [
+  { label: 'Green Card', href: '/' },
+  { label: 'Z Visa', href: '/china-z-visa-work-permit/' },
+  { label: 'Residence Permits', href: '/china-residence-permit-guide/' },
+  { label: 'PR Permit', href: '/china-permanent-residence-permit/' },
+  { label: 'Spouse PR', href: '/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/' },
+  { label: 'Citizenship', href: '/china-citizenship-and-naturalization-for-foreigners/' },
+];
+
 // Site-level guide directory — every content page registered here so the
 // footer can render cross-links automatically.
 interface SitePage {
@@ -68,6 +80,7 @@ const sitePages: SitePage[] = [
   { title: 'China Residence Permit Guide', href: '/china-residence-permit-guide/', shortLabel: 'Residence Permit Guide' },
   { title: 'PR for Spouse of Chinese Citizen', href: '/china-permanent-residence-for-foreign-spouse-of-chinese-citizen-requirements-2026/', shortLabel: 'Spouse PR Guide' },
   { title: 'China Permanent Residence Permit', href: '/china-permanent-residence-permit/', shortLabel: 'PR Permit' },
+  { title: 'Chinese Citizenship & Naturalization', href: '/china-citizenship-and-naturalization-for-foreigners/', shortLabel: 'Citizenship' },
   { title: 'China Z Visa & Work Permit', href: '/china-z-visa-work-permit/', shortLabel: 'Z Visa & Work Permit' },
   { title: 'Free Consultation', href: '/consultation/' },
 ];
@@ -140,13 +153,16 @@ const footerSectionsHeading = footerSectionsTitle ?? (resolvedNavLinks ? 'On Thi
               <div class="nav-logo-sub">Live More for Less</div>
             </div>
           </a>
-          {resolvedNavLinks && (
-            <ul class="nav-links">
-              {resolvedNavLinks.map((link) => (
-                <li><a href={link.href}>{link.label}</a></li>
-              ))}
-            </ul>
-          )}
+          <ul class="nav-links">
+            {guideNav.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  aria-current={link.href === normalizedPath || link.href === pathname ? 'page' : undefined}
+                >{link.label}</a>
+              </li>
+            ))}
+          </ul>
           <div class="nav-cta">
             {isConsultation ? (
               <a href="/" class="btn btn-primary" style="padding:10px 20px; font-size:.85rem;">Back to Guide</a>
