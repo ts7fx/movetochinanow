@@ -16,6 +16,10 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.*
+
+# private SEO/GEO ops repo (separate private git; never tracked here)
+ops/
 
 # macOS-specific files
 .DS_Store
